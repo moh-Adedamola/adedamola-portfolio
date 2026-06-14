@@ -13,7 +13,7 @@
   --muted-foreground:   29 10% 43%;
   --primary:            173 78% 35%;
   --primary-foreground: 174 83% 7%;
-  --brand-navy:         26 27% 10%;
+  --brand-espresso:         26 27% 10%;
   --border:             30 15% 83%;
   --input:              30 12% 81%;
   --ring:               173 78% 35%;
@@ -31,7 +31,7 @@
   --muted-foreground:   32 14% 61%;
   --primary:            173 70% 41%;
   --primary-foreground: 174 83% 7%;
-  --brand-navy:         26 27% 10%;
+  --brand-espresso:         26 27% 10%;
   --border:             30 20% 20%;
   --input:              30 17% 22%;
   --ring:               173 70% 41%;
@@ -52,7 +52,7 @@
   --color-muted-foreground:   hsl(var(--muted-foreground));
   --color-primary:            hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-brand-navy:         hsl(var(--brand-navy));
+  --color-brand-espresso:     hsl(var(--brand-espresso));
   --color-border:             hsl(var(--border));
   --color-input:              hsl(var(--input));
   --color-ring:               hsl(var(--ring));

@@ -58,17 +58,13 @@ utilities.
 | Muted text              | `--muted-foreground`   | `29 10% 43%`                | `32 14% 61%`                |
 | Accent (primary)        | `--primary`            | `173 78% 35%` (teal)        | `173 70% 41%` (teal)        |
 | Accent foreground       | `--primary-foreground` | `174 83% 7%`                | `174 83% 7%`                |
-| Brand anchor surface    | `--brand-navy`         | `26 27% 10%` (espresso)     | `26 27% 10%` (espresso)     |
+| Brand anchor surface    | `--brand-espresso`     | `26 27% 10%` (espresso)     | `26 27% 10%` (espresso)     |
 | Border                  | `--border`             | `30 15% 83%`                | `30 20% 20%`                |
 | Input border            | `--input`              | `30 12% 81%`                | `30 17% 22%`                |
 | Ring (focus)            | `--ring`               | `173 78% 35%` (teal)        | `173 70% 41%` (teal)        |
 | Muted surface           | `--muted`              | `33 28% 90%`                | `30 22% 13%`                |
 | Destructive             | `--destructive`        | `0 75% 50%`                 | `0 70% 55%`                 |
 | Success                 | `--success`            | `152 60% 38%`               | `152 55% 50%`               |
-
-> **Note on `--brand-navy`:** The token name is kept for structural
-> consistency but now holds the espresso anchor. Rename to
-> `--brand-espresso` in a future cleanup pass if desired.
 
 ### Color Philosophy
 
@@ -78,7 +74,7 @@ utilities.
   highlights, focus rings).
 - Use the teal with intent — a single confident accent beats
   a rainbow. Warm canvas, sharp accent.
-- The hero may use a brand-espresso surface (`--brand-navy`)
+- The hero may use the brand-espresso surface (`--brand-espresso`)
   as a bold full-bleed block, with the founder photo and teal
   CTA on top.
 - No cool greys, no blue or purple tints. Every surface token
