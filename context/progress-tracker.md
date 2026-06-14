@@ -6,13 +6,13 @@ it got there.
 
 ## Current Phase
 
-- Phase 0 — Foundation. Project initialization, stack setup,
-  brand theme, and base layout.
+- Phase 0 — Foundation (steps 1–4). Scaffold, brand theme, and
+  typography complete; shadcn/ui init in progress.
 
 ## Current Goal
 
-- Initialize the Next.js project with the documented stack and
-  brand theme, and verify the build pipeline works end to end.
+- Initialize shadcn/ui in v4 mode and install the MVP components
+  so they adopt the Espresso & Teal theme automatically.
 
 ## Completed
 
@@ -132,7 +132,7 @@ are part of launch.
 | Phase 0 | Contact via Server Action + Resend, mailto fallback   | Simple; graceful degradation.                                       |
 | Phase 0 | Single-page homepage with in-page anchors             | Minimal nav keeps focus on founder + work (2026 best practice).     |
 | Phase 0 | Light + dark from day one                             | Easier to bake in than retrofit; matches agency.                    |
-| Phase 0 | Inter + DM Sans, navy/blue palette                    | Refacint brand consistency.                                         |
+| Phase 0 | Inter + DM Sans, Espresso & Teal palette              | Founder-specific warmth; distinct from the agency site.             |
 | Phase 0 | New dedicated repo, built with Claude Code            | Clean separation; founder-owned codebase.                           |
 | Phase 0 | Design refs: Vysta (look) + Stanlee (content)         | Agency-grade polish with honest, first-person founder content.      |
 | Phase 0 | Stats strip is optional, real numbers only            | No fabricated metrics; honesty over filling the layout.             |
