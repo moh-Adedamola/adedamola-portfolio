@@ -37,7 +37,9 @@ it got there.
 
 ## In Progress
 
-- None yet. Awaiting kickoff of Phase 0 implementation.
+- **Brand theme:** semantic tokens from `ui-context.md` in
+  `globals.css` via `@theme` (navy/blue, light + dark);
+  `next-themes` provider + toggle.
 
 ## Next Up
 
@@ -45,9 +47,13 @@ In order. Foundation first, then static sections, then the
 blog + CMS, then SEO/analytics/deploy. The blog and dashboard
 are part of launch.
 
-1. **Project scaffold:** `create-next-app` with TypeScript,
+1. ~~**Project scaffold:** `create-next-app` with TypeScript,
    Tailwind v4, ESLint, App Router, `src/` dir. Verify
-   `npm run build` and `npm run dev`.
+   `npm run build` and `npm run dev`.~~ ✓ Done — Next.js 15
+   scaffolded, `npm run dev` and `npm run build` both clean,
+   pushed to GitHub (`moh-Adedamola/adedamola-portfolio`),
+   `context/` and `build/` included. `.gitignore` extended
+   with `!/build`, `!.env.example`, `src/generated/`.
 2. **Brand theme:** semantic tokens from `ui-context.md` in
    `globals.css` via `@theme` (navy/blue, light + dark);
    `next-themes` provider + toggle.
