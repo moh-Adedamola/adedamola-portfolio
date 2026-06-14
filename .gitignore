@@ -19,6 +19,8 @@
 
 # production
 /build
+# build/ in this repo holds planning docs, not build output — keep it tracked
+!/build
 
 # misc
 .DS_Store
@@ -32,6 +34,11 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# Allow the example template to be committed as a reference
+!.env.example
+
+# Prisma generated client (created by: npx prisma generate)
+src/generated/
 
 # vercel
 .vercel
