@@ -37,9 +37,8 @@ it got there.
 
 ## In Progress
 
-- **Brand theme:** semantic tokens from `ui-context.md` in
-  `globals.css` via `@theme` (navy/blue, light + dark);
-  `next-themes` provider + toggle.
+- **shadcn/ui init:** v4 mode, install MVP components
+  (incl. accordion, sheet, sonner).
 
 ## Next Up
 
@@ -54,10 +53,14 @@ are part of launch.
    pushed to GitHub (`moh-Adedamola/adedamola-portfolio`),
    `context/` and `build/` included. `.gitignore` extended
    with `!/build`, `!.env.example`, `src/generated/`.
-2. **Brand theme:** semantic tokens from `ui-context.md` in
+2. ~~**Brand theme:** semantic tokens from `ui-context.md` in
    `globals.css` via `@theme` (navy/blue, light + dark);
-   `next-themes` provider + toggle.
-3. **Typography:** Inter + DM Sans via `next/font/google`.
+   `next-themes` provider + toggle.~~ ✓ Done — Espresso & Teal
+   palette, 14 semantic tokens, `next-themes` + `ThemeToggle`,
+   `--brand-espresso` anchor, `ui-context.md` updated.
+3. ~~**Typography:** Inter + DM Sans via `next/font/google`.~~ ✓ Done —
+   both fonts loaded with `display: "swap"`, `--font-sans` and
+   `--font-display` wired through `@theme inline`.
 4. **shadcn/ui init:** v4 mode, install MVP components
    (incl. accordion, sheet, sonner).
 5. **Site shell:** `SiteHeader` + `SiteFooter` (required
