@@ -2,15 +2,16 @@
 
 ## Theme
 
-The portfolio shares Refacint's brand DNA: a confident,
-modern, tech-forward look anchored by a deep navy and a
-vivid blue. Light mode is clean and bright with navy text
-on near-white; dark mode is a deep navy canvas with the
-blue accent carrying energy. The design reference is the
-same direction used for the agency site (clean, premium,
-Azuro-Digital-adjacent), interpreted for a personal/founder
-feel: more first-person, more photography of the founder,
-slightly warmer and more human than the corporate site.
+The portfolio carries Refacint's brand DNA through a warmer,
+more personal lens: a rich espresso-and-teal palette that
+feels grounded, human, and premium. Light mode is a warm
+cream canvas with deep espresso text; dark mode is a rich
+espresso canvas with a crisp teal accent carrying energy.
+The design reference is the same direction used for the
+agency site (clean, premium, Azuro-Digital-adjacent),
+interpreted for a personal/founder feel: more first-person,
+more photography of the founder, warmer and more human than
+the corporate site.
 
 Both modes are supported via `next-themes` with a toggle.
 System preference is respected on first visit and the
@@ -21,12 +22,19 @@ tokens, not raw hex.
 
 ## Brand Colors
 
-The two brand anchors:
+The two brand anchors — **Espresso & Teal**:
 
-- **Navy** `#0E1435` — primary brand color, dark surfaces,
-  primary text in light mode. HSL ≈ `231 58% 13%`.
-- **Blue** `#0D70DA` — accent, links, primary buttons,
-  focus rings, highlights. HSL ≈ `211 89% 45%`.
+- **Espresso** `#211913` — primary brand color, deep anchor,
+  primary text in light mode, dark hero surfaces.
+  HSL ≈ `26 27% 10%`.
+- **Teal** `#149E8E` (light) / `#1FB0A0` (dark) — accent,
+  links, primary buttons, focus rings, highlights.
+  HSL ≈ `173 78% 35%` / `173 70% 41%`.
+
+Supporting tones:
+- **Cream** `#FAF6F0` — light mode page background. HSL ≈ `36 50% 96%`.
+- **Deep espresso** `#161009` — dark mode page background. HSL ≈ `32 42% 6%`.
+- **Accent foreground** `#03201D` — text on teal buttons/badges. HSL ≈ `174 83% 7%`.
 
 These are declared once as theme tokens and referenced
 semantically everywhere. Never paste the hex into a
@@ -41,35 +49,40 @@ utilities.
 
 ### Semantic Tokens
 
-| Role                 | Token                  | Light                | Dark                 |
-| -------------------- | ---------------------- | -------------------- | -------------------- |
-| Page background      | `--background`         | `0 0% 100%`          | `231 58% 9%`         |
-| Surface (card)       | `--card`               | `220 33% 98%`        | `231 45% 13%`        |
-| Surface elevated     | `--surface-elevated`   | `220 30% 96%`        | `231 40% 16%`        |
-| Primary text         | `--foreground`         | `231 58% 13%` (navy) | `220 30% 96%`        |
-| Muted text           | `--muted-foreground`   | `231 12% 42%`        | `220 14% 68%`        |
-| Accent (primary)     | `--primary`            | `211 89% 45%` (blue) | `211 89% 55%`        |
-| Accent foreground    | `--primary-foreground` | `0 0% 100%`          | `231 58% 9%`         |
-| Brand navy surface   | `--brand-navy`         | `231 58% 13%`        | `231 58% 13%`        |
-| Border               | `--border`             | `220 16% 88%`        | `231 30% 22%`        |
-| Input border         | `--input`              | `220 16% 85%`        | `231 30% 24%`        |
-| Ring (focus)         | `--ring`               | `211 89% 45%`        | `211 89% 55%`        |
-| Muted surface        | `--muted`              | `220 20% 94%`        | `231 35% 15%`        |
-| Destructive          | `--destructive`        | `0 75% 50%`          | `0 70% 55%`          |
-| Success              | `--success`            | `152 60% 38%`        | `152 55% 50%`        |
+| Role                    | Token                  | Light                       | Dark                        |
+| ----------------------- | ---------------------- | --------------------------- | --------------------------- |
+| Page background         | `--background`         | `36 50% 96%` (cream)        | `32 42% 6%` (deep espresso) |
+| Surface (card)          | `--card`               | `35 42% 93%`                | `30 33% 11%`                |
+| Surface elevated        | `--surface-elevated`   | `34 35% 91%`                | `30 26% 15%`                |
+| Primary text            | `--foreground`         | `26 27% 10%` (espresso)     | `35 41% 92%` (cream)        |
+| Muted text              | `--muted-foreground`   | `29 10% 43%`                | `32 14% 61%`                |
+| Accent (primary)        | `--primary`            | `173 78% 35%` (teal)        | `173 70% 41%` (teal)        |
+| Accent foreground       | `--primary-foreground` | `174 83% 7%`                | `174 83% 7%`                |
+| Brand anchor surface    | `--brand-navy`         | `26 27% 10%` (espresso)     | `26 27% 10%` (espresso)     |
+| Border                  | `--border`             | `30 15% 83%`                | `30 20% 20%`                |
+| Input border            | `--input`              | `30 12% 81%`                | `30 17% 22%`                |
+| Ring (focus)            | `--ring`               | `173 78% 35%` (teal)        | `173 70% 41%` (teal)        |
+| Muted surface           | `--muted`              | `33 28% 90%`                | `30 22% 13%`                |
+| Destructive             | `--destructive`        | `0 75% 50%`                 | `0 70% 55%`                 |
+| Success                 | `--success`            | `152 60% 38%`               | `152 55% 50%`               |
+
+> **Note on `--brand-navy`:** The token name is kept for structural
+> consistency but now holds the espresso anchor. Rename to
+> `--brand-espresso` in a future cleanup pass if desired.
 
 ### Color Philosophy
 
-- **Navy carries authority; blue carries action.** Navy is
-  the canvas and the text; the blue is reserved for things
-  the visitor should act on (CTAs, links, key highlights).
-- Use the blue with intent — a single confident accent beats
-  a rainbow. Calm canvas, sharp accent.
-- The hero may use a navy surface (`--brand-navy`) as a bold
-  full-bleed block, with the founder photo and blue CTA on
-  top, echoing the agency site's hero treatment.
-- No purple gradients, no secondary competing accent. Stay on
-  brand.
+- **Espresso carries authority; teal carries action.** Espresso
+  is the canvas and the primary text; teal is reserved for
+  things the visitor should act on (CTAs, links, key
+  highlights, focus rings).
+- Use the teal with intent — a single confident accent beats
+  a rainbow. Warm canvas, sharp accent.
+- The hero may use a brand-espresso surface (`--brand-navy`)
+  as a bold full-bleed block, with the founder photo and teal
+  CTA on top.
+- No cool greys, no blue or purple tints. Every surface token
+  stays in the warm brown family. Stay on brand.
 
 ## Typography
 

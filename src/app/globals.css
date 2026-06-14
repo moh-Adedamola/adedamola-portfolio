@@ -5,36 +5,36 @@
 
 /* ── Light mode — raw HSL channels (no hsl() wrapper, enables opacity variants) */
 :root {
-  --background:         0 0% 100%;
-  --foreground:         231 58% 13%;
-  --card:               220 33% 98%;
-  --surface-elevated:   220 30% 96%;
-  --muted:              220 20% 94%;
-  --muted-foreground:   231 12% 42%;
-  --primary:            211 89% 45%;
-  --primary-foreground: 0 0% 100%;
-  --brand-navy:         231 58% 13%;
-  --border:             220 16% 88%;
-  --input:              220 16% 85%;
-  --ring:               211 89% 45%;
+  --background:         36 50% 96%;
+  --foreground:         26 27% 10%;
+  --card:               35 42% 93%;
+  --surface-elevated:   34 35% 91%;
+  --muted:              33 28% 90%;
+  --muted-foreground:   29 10% 43%;
+  --primary:            173 78% 35%;
+  --primary-foreground: 174 83% 7%;
+  --brand-navy:         26 27% 10%;
+  --border:             30 15% 83%;
+  --input:              30 12% 81%;
+  --ring:               173 78% 35%;
   --destructive:        0 75% 50%;
   --success:            152 60% 38%;
 }
 
 /* ── Dark mode */
 .dark {
-  --background:         231 58% 9%;
-  --foreground:         220 30% 96%;
-  --card:               231 45% 13%;
-  --surface-elevated:   231 40% 16%;
-  --muted:              231 35% 15%;
-  --muted-foreground:   220 14% 68%;
-  --primary:            211 89% 55%;
-  --primary-foreground: 231 58% 9%;
-  --brand-navy:         231 58% 13%;
-  --border:             231 30% 22%;
-  --input:              231 30% 24%;
-  --ring:               211 89% 55%;
+  --background:         32 42% 6%;
+  --foreground:         35 41% 92%;
+  --card:               30 33% 11%;
+  --surface-elevated:   30 26% 15%;
+  --muted:              30 22% 13%;
+  --muted-foreground:   32 14% 61%;
+  --primary:            173 70% 41%;
+  --primary-foreground: 174 83% 7%;
+  --brand-navy:         26 27% 10%;
+  --border:             30 20% 20%;
+  --input:              30 17% 22%;
+  --ring:               173 70% 41%;
   --destructive:        0 70% 55%;
   --success:            152 55% 50%;
 }
