@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { DM_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -28,16 +30,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // suppressHydrationWarning: next-themes patches the class attribute on
-    // <html> client-side. Without this, React warns about the mismatch.
-    // Both font variables go on <html> so they cascade to every element.
     <html
       lang="en"
       suppressHydrationWarning
       className={`${inter.variable} ${dmSans.variable}`}
     >
       <body className="min-h-screen bg-background text-foreground font-sans antialiased">
-        <Providers>{children}</Providers>
+        <Providers>
+          <SiteHeader />
+          <main className="pt-16">
+            {children}
+          </main>
+          <SiteFooter />
+        </Providers>
       </body>
     </html>
   );

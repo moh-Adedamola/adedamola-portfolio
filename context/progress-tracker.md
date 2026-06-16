@@ -6,16 +6,16 @@ it got there.
 
 ## Current Phase
 
-- Phase 0 — Foundation complete. Scaffold, brand theme,
-  typography, and shadcn/ui all done. Ready for Phase 1
-  (site shell: SiteHeader + SiteFooter).
+- Phase 1 — Site shell complete. Header, footer, mobile menu,
+  and theme toggle all wired into layout. Ready for Phase 2
+  (content data files: `src/data/`).
 
 ## Current Goal
 
-- Build the site shell: `SiteHeader` (sticky nav, transparent →
-  blur on scroll, Sheet mobile menu, ThemeToggle, primary CTA)
-  and `SiteFooter` (founder line, section links, socials,
-  refacint.com cross-link).
+- Create typed data files in `src/data/` — `site.ts`,
+  `projects.ts`, `services.ts`, `stack.ts`, `capabilities.ts`,
+  `faq.ts`, `talks.ts`, `socials.ts` per `content-model.md`.
+  Single source of truth for all homepage sections.
 
 ## Completed
 
@@ -40,7 +40,8 @@ it got there.
 
 ## In Progress
 
-- **Site shell:** `SiteHeader` + `SiteFooter`.
+- **Content data files:** `src/data/` — typed data for projects,
+  services, stack, FAQ, talks, socials.
 
 ## Next Up
 
@@ -72,8 +73,15 @@ are part of launch.
    `src/components/layout/` uses mounted-state pattern to
    eliminate hydration mismatch; Espresso & Teal tokens
    untouched throughout.
-5. **Site shell:** `SiteHeader` + `SiteFooter` (required
-   refacint.com cross-link).
+5. ~~**Site shell:** `SiteHeader` + `SiteFooter` (required
+   refacint.com cross-link).~~ ✓ Done — `SiteHeader` fixed/sticky,
+   transparent → `backdrop-blur` on scroll, desktop nav + Sheet
+   mobile menu (Radix focus-trap, Escape/tap-to-close), ThemeToggle
+   in permanent home; `SiteFooter` with founder line, refacint.com
+   cross-link (required, real URL), section nav, hello@refacint.com,
+   social text links (TODO(content) URLs; lucide v1.x has no brand
+   icons — swap when URLs confirmed); both wired into `layout.tsx`;
+   build clean.
 6. **Static content data files:** `src/data/` — `site.ts`,
    `projects.ts`, `services.ts`, `stack.ts`, `capabilities.ts`,
    `stats.ts` (real or empty), `faq.ts`, `talks.ts`,
