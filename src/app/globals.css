@@ -116,6 +116,15 @@
   /* Accordion animations */
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up:   accordion-up   0.2s ease-out;
+
+  /* Hero / section entrance */
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.32, 0.72, 0, 1) both;
+}
+
+/* ── Entrance animation keyframes */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
 }
 
 /* ── Accordion animation keyframes (required by shadcn Accordion component) */
