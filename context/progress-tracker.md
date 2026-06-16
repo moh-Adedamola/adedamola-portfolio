@@ -6,15 +6,15 @@ it got there.
 
 ## Current Phase
 
-- Phase 2 — Content data layer complete. All typed data files
-  in `src/data/` with real content and TODO(content) markers.
-  Ready for Phase 3 (homepage sections).
+- Phase 7 — Homepage sections complete. All 8 sections built,
+  type-checked, and committed individually. Production build
+  (`npm run build`) passes clean (static, 0 errors).
+  Ready for Phase 8: database setup (Prisma + Neon).
 
 ## Current Goal
 
-- Build homepage sections in order per phase-07-sections.md:
-  Hero, Capability Marquee, About, Work, Consulting, Stack,
-  Speaking, FAQ, Contact.
+- Phase 8: database layer — Prisma schema, Neon connection,
+  `lib/db.ts` singleton, initial migration, local seed post.
 
 ## Completed
 
@@ -39,7 +39,7 @@ it got there.
 
 ## In Progress
 
-- **Homepage sections:** Hero first, then sections in order.
+- Nothing — Phase 7 closed out. Starting Phase 8 next.
 
 ## Next Up
 
@@ -90,12 +90,12 @@ are part of launch.
    — no verified numbers yet), talks (empty — no confirmed past
    talks), social URLs, tagline, and per-project details. No
    invented content anywhere. Build clean.
-7. **Hero** → 8. **Capability marquee** + optional **Stats** →
-   9. **About** → 10. **Work** (story cards + logo wall) →
-   11. **Why Work With Me** → 12. **Consulting** → 13. **Stack**
-   → 14. **Speaking** → 15. **FAQ**. Each a slice, each a commit.
-   (The homepage **Writing teaser** is wired in step 19 once
-   the blog data layer exists.)
+7. ~~**Hero** → 8. **Capability marquee** → 9. **About** →
+   10. **Work** (ProjectCard + logo wall) → 11. **Why Work With Me**
+   → 12. **Consulting** → 13. **Stack** → 14. **Speaking** →
+   15. **FAQ**.~~ ✓ Done — all 8 sections built, committed, and
+   production build clean. (The homepage **Writing teaser** is
+   wired in step 19 once the blog data layer exists.)
 16. **Database setup:** Prisma + Neon, the `Post` model from
     `database-schema.md`, initial migration, `lib/db.ts`
     singleton + read/write helpers, seed a draft locally.
