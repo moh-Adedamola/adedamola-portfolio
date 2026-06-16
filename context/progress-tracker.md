@@ -6,16 +6,15 @@ it got there.
 
 ## Current Phase
 
-- Phase 1 — Site shell complete. Header, footer, mobile menu,
-  and theme toggle all wired into layout. Ready for Phase 2
-  (content data files: `src/data/`).
+- Phase 2 — Content data layer complete. All typed data files
+  in `src/data/` with real content and TODO(content) markers.
+  Ready for Phase 3 (homepage sections).
 
 ## Current Goal
 
-- Create typed data files in `src/data/` — `site.ts`,
-  `projects.ts`, `services.ts`, `stack.ts`, `capabilities.ts`,
-  `faq.ts`, `talks.ts`, `socials.ts` per `content-model.md`.
-  Single source of truth for all homepage sections.
+- Build homepage sections in order per phase-07-sections.md:
+  Hero, Capability Marquee, About, Work, Consulting, Stack,
+  Speaking, FAQ, Contact.
 
 ## Completed
 
@@ -40,8 +39,7 @@ it got there.
 
 ## In Progress
 
-- **Content data files:** `src/data/` — typed data for projects,
-  services, stack, FAQ, talks, socials.
+- **Homepage sections:** Hero first, then sections in order.
 
 ## Next Up
 
@@ -82,11 +80,16 @@ are part of launch.
    social text links (TODO(content) URLs; lucide v1.x has no brand
    icons — swap when URLs confirmed); both wired into `layout.tsx`;
    build clean.
-6. **Static content data files:** `src/data/` — `site.ts`,
+6. ~~**Static content data files:** `src/data/` — `site.ts`,
    `projects.ts`, `services.ts`, `stack.ts`, `capabilities.ts`,
    `stats.ts` (real or empty), `faq.ts`, `talks.ts`,
    `socials.ts` per `content-model.md`. (No `posts.ts` — blog
-   is DB-backed.)
+   is DB-backed.)~~ ✓ Done — 9 files, all type-checked. Real
+   content where known; TODO(content) for project
+   problem/approach/outcome (needs founder input), stats (empty
+   — no verified numbers yet), talks (empty — no confirmed past
+   talks), social URLs, tagline, and per-project details. No
+   invented content anywhere. Build clean.
 7. **Hero** → 8. **Capability marquee** + optional **Stats** →
    9. **About** → 10. **Work** (story cards + logo wall) →
    11. **Why Work With Me** → 12. **Consulting** → 13. **Stack**
