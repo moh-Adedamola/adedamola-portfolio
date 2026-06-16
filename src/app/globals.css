@@ -119,12 +119,20 @@
 
   /* Hero / section entrance */
   --animate-fade-up: fade-up 0.6s cubic-bezier(0.32, 0.72, 0, 1) both;
+
+  /* Capability marquee */
+  --animate-marquee: marquee 28s linear infinite;
 }
 
 /* ── Entrance animation keyframes */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 /* ── Accordion animation keyframes (required by shadcn Accordion component) */
