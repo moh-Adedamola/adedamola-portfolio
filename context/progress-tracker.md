@@ -6,13 +6,16 @@ it got there.
 
 ## Current Phase
 
-- Phase 0 — Foundation (steps 1–4). Scaffold, brand theme, and
-  typography complete; shadcn/ui init in progress.
+- Phase 0 — Foundation complete. Scaffold, brand theme,
+  typography, and shadcn/ui all done. Ready for Phase 1
+  (site shell: SiteHeader + SiteFooter).
 
 ## Current Goal
 
-- Initialize shadcn/ui in v4 mode and install the MVP components
-  so they adopt the Espresso & Teal theme automatically.
+- Build the site shell: `SiteHeader` (sticky nav, transparent →
+  blur on scroll, Sheet mobile menu, ThemeToggle, primary CTA)
+  and `SiteFooter` (founder line, section links, socials,
+  refacint.com cross-link).
 
 ## Completed
 
@@ -37,8 +40,7 @@ it got there.
 
 ## In Progress
 
-- **shadcn/ui init:** v4 mode, install MVP components
-  (incl. accordion, sheet, sonner).
+- **Site shell:** `SiteHeader` + `SiteFooter`.
 
 ## Next Up
 
@@ -61,8 +63,15 @@ are part of launch.
 3. ~~**Typography:** Inter + DM Sans via `next/font/google`.~~ ✓ Done —
    both fonts loaded with `display: "swap"`, `--font-sans` and
    `--font-display` wired through `@theme inline`.
-4. **shadcn/ui init:** v4 mode, install MVP components
-   (incl. accordion, sheet, sonner).
+4. ~~**shadcn/ui init:** v4 mode, install MVP components
+   (incl. accordion, sheet, sonner).~~ ✓ Done — `components.json`
+   hand-crafted (Tailwind v4, new-york style, cssVariables);
+   13 MVP components in `src/components/ui/`; accordion
+   keyframes added to `globals.css`; `TooltipProvider` + `Toaster`
+   wired in `providers.tsx`; `ThemeToggle` in
+   `src/components/layout/` uses mounted-state pattern to
+   eliminate hydration mismatch; Espresso & Teal tokens
+   untouched throughout.
 5. **Site shell:** `SiteHeader` + `SiteFooter` (required
    refacint.com cross-link).
 6. **Static content data files:** `src/data/` — `site.ts`,

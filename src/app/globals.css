@@ -112,6 +112,20 @@
   /* Font families — values injected by next/font in layout.tsx */
   --font-sans:    var(--font-sans);
   --font-display: var(--font-display);
+
+  /* Accordion animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up:   accordion-up   0.2s ease-out;
+}
+
+/* ── Accordion animation keyframes (required by shadcn Accordion component) */
+@keyframes accordion-down {
+  from { height: 0; overflow: hidden; }
+  to   { height: var(--radix-accordion-content-height); overflow: hidden; }
+}
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); overflow: hidden; }
+  to   { height: 0; overflow: hidden; }
 }
 
 /* ── Base styles */
