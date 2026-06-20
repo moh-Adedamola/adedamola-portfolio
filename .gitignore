@@ -43,6 +43,11 @@ src/generated/
 # vercel
 .vercel
 
+# Claude Code local state (memory files, session data — not for repo)
+.claude/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/src/generated/prisma

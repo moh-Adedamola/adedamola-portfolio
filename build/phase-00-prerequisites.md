@@ -19,9 +19,10 @@ gathered or clearly marked as "still to come".
 A few terms you'll see throughout the guide:
 
 - **Terminal (or command line):** a text window where you type
-  commands instead of clicking buttons. On Mac it's the
-  "Terminal" app; on Windows, use "PowerShell" or the terminal
-  built into your code editor. You'll paste commands here.
+  commands instead of clicking buttons. **On Windows this guide
+  uses PowerShell** (the default terminal in VS Code and
+  Windows). You'll paste commands here. (Avoid WSL/Git Bash for
+  this project — stay on PowerShell so everything is consistent.)
 - **Node.js and npm:** Node.js lets your computer run
   JavaScript outside a browser, which is what a Next.js site
   needs to build. `npm` ("node package manager") comes with

@@ -80,10 +80,17 @@ So you always know what you're looking at:
   real value isn't ready, it goes in as a clearly-marked
   `TODO(content)` placeholder and you fill it later. This rule
   is non-negotiable and comes straight from `brand-context.md`.
-- **Ask for single bash scripts.** When Claude Code makes
-  changes, ask it to deliver them as one executable bash script
-  you run from the project root. It's cleaner than copy-pasting
-  many separate commands, and easier to review before running.
+- **Commands are PowerShell-native.** This project is built on
+  Windows using PowerShell. When Claude Code makes changes, it
+  gives you PowerShell commands — or a single `.ps1` script when
+  several steps are needed — that you run from the project root.
+  It does **not** hand you bash/`.sh` scripts. **This supersedes
+  any phase file below that says "deliver as one bash script" —
+  read those as "deliver as PowerShell-native commands."** If a
+  phase's pasted prompt mentions a bash script, you can either
+  ignore that word or add "give me PowerShell commands, not
+  bash" to the prompt. Either way Claude Code already has the
+  standing instruction once you've set it (Phase 1).
 - **Approve direction first, then refine.** When Claude Code
   proposes an approach, read it, adjust it, and only then let
   it write the code. You're the director; it's the builder.

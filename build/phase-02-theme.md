@@ -3,12 +3,12 @@
 ## What you're building and why
 
 Right now your site runs but looks like a generic Next.js
-starter. In this phase you give it your founder identity: the
-Espresso (`#211913`) and Teal (`#149E8E`) colours, and the
-ability to switch between light and dark mode. Getting this in
-early matters — every component you build afterward will use
-these colours, so you want them defined once, properly, before
-there's anything to retrofit.
+starter. In this phase you give it the Refacint identity: the
+navy (`#0E1435`) and blue (`#0D70DA`) colours, and the ability
+to switch between light and dark mode. Getting this in early
+matters — every component you build afterward will use these
+colours, so you want them defined once, properly, before there's
+anything to retrofit.
 
 By the end, your site will have the right brand colours in both
 light and dark mode, a working toggle to switch between them,
@@ -17,18 +17,18 @@ you use named "tokens" instead.
 
 ## Concepts you need first
 
-- **Design tokens:** instead of writing the hex code `#149E8E`
+- **Design tokens:** instead of writing the hex code `#0D70DA`
   all over your code, you define it once with a name like
-  `--primary`, and everywhere you want that teal you refer to
+  `--primary`, and everywhere you want that blue you refer to
   the name. Change the name's value in one place and the whole
   site updates. This is what `ui-context.md` means by "semantic
   tokens".
 - **Light and dark mode:** two sets of colour values. In light
-  mode the background is warm cream and text is deep espresso;
-  in dark mode the background is deep espresso and text is warm
-  cream. The *names* stay the same (`--background`,
-  `--foreground`); only the values swap. That's why components
-  written against tokens "just work" in both modes.
+  mode the background is near-white and text is navy; in dark
+  mode the background is deep navy and text is near-white. The
+  *names* stay the same (`--background`, `--foreground`); only
+  the values swap. That's why components written against tokens
+  "just work" in both modes.
 - **Tailwind v4's CSS-first config:** in older Tailwind you
   configured colours in a JavaScript file. In version 4 (what
   you're using, matching your agency site) you define them in
@@ -57,10 +57,10 @@ Open Claude Code in your project and give it this:
 > Implement the semantic colour tokens exactly as specified in
 > `ui-context.md`, for both light (`:root`) and dark (`.dark`)
 > modes, in `src/app/globals.css` using Tailwind v4's CSS-first
-> `@theme` approach. The brand anchors are Espresso `#211913`
-> and Teal `#149E8E` (light) / `#1FB0A0` (dark). Do not
-> hardcode hex anywhere except the token definitions themselves.
-> Deliver it as PowerShell steps and explain the approach first.
+> `@theme` approach. The brand anchors are navy `#0E1435` and
+> blue `#0D70DA`. Do not hardcode hex anywhere except the token
+> definitions themselves. Deliver it as a single bash script
+> and explain the approach before I run it.
 
 Read its explanation. It should be defining CSS variables for
 things like `--background`, `--foreground`, `--primary`,
@@ -75,7 +75,7 @@ Next:
 > in the root layout so the whole app can switch between light
 > and dark, respecting the user's system preference on first
 > visit and remembering their choice. Set it up so there's no
-> flash of the wrong theme on page load. PowerShell steps.
+> flash of the wrong theme on page load. One bash script.
 
 The "flash of the wrong theme" note matters — without care, a
 site can briefly show light mode before switching to dark on
@@ -105,7 +105,7 @@ To confirm the tokens actually work, ask:
 ### Step 5 — Look at it
 
 Start the dev server (`npm run dev`) and open
-`http://localhost:3000`. You should see your Espresso & Teal
+`http://localhost:3000`. You should see your navy and blue
 brand colours. Click the toggle: the whole test area should
 flip between light and dark cleanly, with no flash and no
 unreadable colour combinations.
@@ -120,12 +120,12 @@ Once you're happy:
 
 ## Verify
 
-- The site shows the Espresso & Teal brand palette, not the
-  generic starter colours.
+- The site shows the navy/blue brand palette, not the generic
+  starter colours.
 - The toggle switches the whole page between light and dark.
 - There's no flash of the wrong theme when you reload the page.
-- Text is readable in both modes (espresso on cream in light,
-  warm cream on deep espresso in dark — no low-contrast combos).
+- Text is readable in both modes (navy on light, light on
+  navy — no grey-on-grey or blue-on-navy that disappears).
 - `npm run build` passes with no errors.
 
 ## Common problems and fixes
