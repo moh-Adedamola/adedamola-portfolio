@@ -6,10 +6,10 @@ import { site } from "@/data/site";
 
 export function Speaking() {
   return (
-    <section id="speaking" className="py-16 md:py-24">
+    <section id="speaking" className="bg-section-base section-y">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
 
-        <SectionHeading eyebrow="Speaking" title="Talks & workshops." />
+        <SectionHeading eyebrow="Speaking" title="Talks & workshops." headingSize="xl" />
 
         {talks.length === 0 ? (
           // Empty state: invite-to-speak panel.

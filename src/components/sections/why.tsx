@@ -7,35 +7,33 @@ import { SectionHeading } from "@/components/section-heading";
 const DIFFERENTIATORS = [
   {
     label: "Market",
-    heading: "I build for the market I know.",
-    // Why: Afeez works in Lagos. Nigerian SMBs face constraints (connectivity,
-    // lean teams, seasonality) that generic software advice glosses over.
-    body: "Most software advice assumes a context that does not fit Lagos SMBs. I work inside this market — I understand the real constraints and what actually ships here.",
+    heading: "I build for who I build for.",
+    body: "I build for founders and small businesses who need software that just works — not enterprise tools bent to fit, not demos that fall apart in real use. I get the constraints, because I work in them.",
   },
   {
     label: "Track record",
-    heading: "Real clients, shipped.",
-    // Why: MOLEK Schools, Klassrun Technologies, Tenderville School are confirmed
-    // real clients from projects.ts. Naming them is the most honest proof.
-    body: "MOLEK Schools, Klassrun Technologies, Tenderville School — real businesses with specific problems I built for. That track record is the most honest thing I can show you.",
+    heading: "Real work, real clients.",
+    // Why: MOLEK Schools is a real paid client; EventIQ is also a paid client
+    // build (in progress). Klassrun is the founder's own startup, not a client
+    // engagement — the copy must keep that distinction honest.
+    body: "MOLEK Schools runs on a platform I built — and pays me to keep building it. EventIQ is another client build in progress: a vendor marketplace with escrow payments. Klassrun is my own — an AI school platform I'm co-founding. Real projects, real stakes.",
   },
   {
     label: "Approach",
-    heading: "Systems, not one-off tools.",
-    // Why: Automation-first focus is the stated core of Refacint's positioning.
-    // "Systems that compound" is the literal phrase from feature-specs.md.
-    body: "I build things that keep working after I leave. Automation that compounds — not a dependency on me for every change, but a system that does more over time.",
+    heading: "Built to last, not babysit.",
+    body: "I build things that keep working after I leave — tested properly, planned before they're coded, and designed so they don't fall over the first time someone uses them differently than expected.",
   },
 ] as const;
 
 export function Why() {
   return (
-    <section id="why" className="bg-card py-16 md:py-24">
+    <section id="why" className="bg-section-raised section-y">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
 
         <SectionHeading
           eyebrow="Why work with me"
           title="What I bring."
+          headingSize="xl"
         />
 
         <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-3">

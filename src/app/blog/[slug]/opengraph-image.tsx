@@ -3,7 +3,7 @@ import { db } from "@/lib/db";
 import { site } from "@/data/site";
 
 export const runtime     = "nodejs"; // needs DB via pg adapter — not edge-compatible
-export const alt         = `Blog · ${site.name}`;
+export const alt         = `Blog · ${site.personName}`;
 export const size        = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -46,7 +46,7 @@ export default async function Image({
       : null
     : site.role;
   const footer   = isPublished
-    ? `${site.name} — ${site.role}`
+    ? `${site.personName} — ${site.role}`
     : clampWords(site.description, 90);
 
   // Shrink font for longer titles so they fit in one or two lines

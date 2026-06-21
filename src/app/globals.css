@@ -35,6 +35,13 @@
   --border:                  30 15% 83%;
   --input:                   30 12% 81%;
   --ring:                    173 78% 35%;
+
+  /* Section background tokens — own values, not aliased, for a clearly visible alternation */
+  --section-base:   var(--background);  /* flush with page bg: hsl(36 50% 96%)            */
+  --section-raised: 35 34% 88%;         /* 8 pt lightness step below base — warm-but-grey  */
+
+  /* Elevated card surface — guaranteed above BOTH section backgrounds in both themes */
+  --section-card:   35 40% 98%;         /* L=98%: 2pt above base, 10pt above raised        */
 }
 
 /* ── Dark mode */
@@ -68,6 +75,12 @@
   --border:                  30 20% 20%;
   --input:                   30 17% 22%;
   --ring:                    173 70% 41%;
+
+  /* Section background token — 11 pt lightness step above dark base hsl(32 42% 6%) */
+  --section-raised:          30 24% 17%;
+
+  /* Elevated card surface — L=22%: 16pt above base, 5pt above raised */
+  --section-card:            30 26% 22%;
 }
 
 /* ── Tailwind v4 design tokens
@@ -103,6 +116,11 @@
   --color-border:                  hsl(var(--border));
   --color-input:                   hsl(var(--input));
   --color-ring:                    hsl(var(--ring));
+
+  /* Section surface utilities — bg-section-base / bg-section-raised / bg-section-card */
+  --color-section-base:            hsl(var(--section-base));
+  --color-section-raised:          hsl(var(--section-raised));
+  --color-section-card:            hsl(var(--section-card));
 
   /* Border radius — four tiers from ui-context.md */
   --radius-sm: 0.375rem;  /* badges, inline elements  → rounded-sm */
@@ -150,4 +168,23 @@
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+}
+
+/* ── Tech-icon brand colors — vars set on the span itself, no inheritance hop */
+.icon-col         { color: var(--icon-color); }
+.dark .icon-col   { color: var(--icon-color-d); }
+
+/* ── Vysta foundations — section spacing
+   Single source of truth for section vertical padding.
+   Unlayered so it can't be accidentally overridden by Tailwind utilities. */
+.section-y {
+  padding-top:    6rem;   /* 96 px  — mobile  */
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section-y {
+    padding-top:    8rem;  /* 128 px — desktop */
+    padding-bottom: 8rem;
+  }
 }

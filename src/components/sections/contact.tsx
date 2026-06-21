@@ -31,7 +31,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-16 md:py-24">
+    <section id="contact" className="bg-section-raised section-y">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <div className="grid gap-12 md:grid-cols-2 md:gap-20">
 
@@ -41,6 +41,7 @@ export function Contact() {
               eyebrow="Contact"
               title="Let's work together."
               intro="Have a project in mind or want to explore what's possible? Send a message and I'll get back to you."
+              headingSize="xl"
             />
             <p className="text-sm text-muted-foreground">
               Prefer email?{" "}

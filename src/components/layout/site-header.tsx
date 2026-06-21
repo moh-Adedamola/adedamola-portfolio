@@ -43,12 +43,11 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
 
-        {/* TODO(content): finalise wordmark / founder name treatment */}
         <Link
           href="/"
           className="font-display font-semibold text-foreground transition-opacity hover:opacity-80"
         >
-          Afeez
+          Moh
         </Link>
 
         {/* Desktop nav */}
@@ -83,8 +82,7 @@ export function SiteHeader() {
             </SheetTrigger>
             <SheetContent side="right" className="w-72">
               <SheetHeader>
-                {/* TODO(content): finalise wordmark */}
-                <SheetTitle className="text-left font-display">Afeez</SheetTitle>
+                <SheetTitle className="text-left font-display">Moh</SheetTitle>
               </SheetHeader>
               <nav className="mt-8 flex flex-col gap-1" aria-label="Mobile navigation">
                 {navLinks.map((link) => (

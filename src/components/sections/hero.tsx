@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[90vh] items-center bg-background"
+      className="relative flex min-h-[90vh] items-center bg-section-base"
     >
       <div className="mx-auto w-full max-w-6xl px-4 py-24 md:px-6 md:py-32">
         <div className="grid items-center gap-12 md:grid-cols-2">
@@ -77,7 +77,7 @@ export function Hero() {
 
               <Image
                 src="/images/founder.jpg"
-                alt="Afeez — Founder, Refacint Technologies"
+                alt="Moh — Founder, Refacint Technologies"
                 width={480}
                 height={560}
                 priority

@@ -21,12 +21,12 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const { name, client, summary, problem, approach, outcome,
-          tags, year, imageUrl, liveUrl } = project;
+          tags, year, imageUrl, liveUrl, linkLabel } = project;
 
   const hasStory = !isTodo(summary) && (problem || approach || outcome);
 
   return (
-    <article className="group flex flex-col rounded-2xl border border-border bg-card overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+    <article className="group flex flex-col rounded-2xl border border-border bg-section-card shadow-sm overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
 
       {/* Image */}
       {imageUrl ? (
@@ -91,7 +91,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             rel="noopener noreferrer"
             className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-primary underline-offset-4 hover:underline"
           >
-            View live ↗
+            {linkLabel ?? "View live"} ↗
           </a>
         )}
 

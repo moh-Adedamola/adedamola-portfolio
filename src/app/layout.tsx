@@ -23,18 +23,18 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const defaultTitle = `${site.name} — ${site.role}`;
+const defaultTitle = `${site.personName} — ${site.role}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default:  defaultTitle,
-    template: `%s · ${site.name}`,
+    template: `%s · ${site.personName}`,
   },
   description: site.description,
   openGraph: {
     type:        "website",
-    siteName:    site.name,
+    siteName:    site.personName,
     url:         siteUrl,
     title:       defaultTitle,
     description: site.description,

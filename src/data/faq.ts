@@ -22,19 +22,30 @@ export const faq: readonly Faq[] = [
   },
   {
     question: "How long does a project take?",
-    // TODO(content): replace with your honest, experience-based answer.
-    // Brand rule: realistic timelines only — no "30 days to X" framing.
-    answer: "TODO(content)",
+    answer:
+      "Depends what you're building, but most projects start showing " +
+      "real progress in weeks, not months. After we talk through what " +
+      "you need, I'll give you a clear timeline up front — no vague " +
+      "\"it'll be ready when it's ready.\" I work in weekly chunks, so " +
+      "you see it taking shape as we go.",
   },
   {
     question: "How does an engagement start?",
-    // TODO(content): describe your real process — discovery call, brief, etc.
-    answer: "TODO(content)",
+    answer:
+      "With a conversation. You tell me what's slowing you down or what " +
+      "you want built — you don't need to know the technical side. A " +
+      "few days later I come back with a plan: what I'll build, how " +
+      "long it'll take, what it costs. If it works for you, we start, " +
+      "and I'm around after launch too.",
   },
   {
     question: "Do you work with early-stage startups?",
-    // TODO(content): your honest answer on who you work best with.
-    answer: "TODO(content)",
+    answer:
+      "Yeah, a lot. I work with founders and small businesses who need " +
+      "something real in people's hands without overbuilding. An MVP to " +
+      "test an idea, a system to run your operations — I'd rather ship " +
+      "you something that works and grows than something bloated you " +
+      "didn't need yet.",
   },
   {
     question: "Are you available for speaking?",

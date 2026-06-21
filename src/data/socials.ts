@@ -8,7 +8,7 @@ export interface Social {
 // TODO(content): replace each href with your real profile URL.
 // All three are placeholder "#" until confirmed.
 export const socials: readonly Social[] = [
-  { label: "LinkedIn", href: "#", icon: "Linkedin" },
-  { label: "X",        href: "#", icon: "Twitter"  },
-  { label: "GitHub",   href: "#", icon: "Github"   },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/mohammed-adegbite-2a6990301/", icon: "Linkedin" },
+  { label: "X",        href: "https://x.com/adedamoh",                                   icon: "Twitter"  },
+  { label: "GitHub",   href: "https://github.com/moh-Adedamola",                         icon: "Github"   },
 ];

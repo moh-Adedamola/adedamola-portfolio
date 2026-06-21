@@ -15,10 +15,10 @@ function isTodo(s: string) {
 
 export function Faq() {
   return (
-    <section id="faq" className="bg-card py-16 md:py-24">
+    <section id="faq" className="bg-section-base section-y">
       <div className="mx-auto max-w-3xl px-4 md:px-6">
 
-        <SectionHeading eyebrow="FAQ" title="Common questions." />
+        <SectionHeading eyebrow="FAQ" title="Common questions." headingSize="xl" />
 
         <Accordion type="single" collapsible className="mt-10 w-full">
           {faq.map((item, i) => (

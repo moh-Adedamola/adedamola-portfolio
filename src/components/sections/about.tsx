@@ -14,23 +14,16 @@ import { site } from "@/data/site";
 // TODO(content): punchy section heading — a phrase that captures who you are,
 // not just "About me". Example shape: "Builder. Founder. Automation nerd." —
 // but write it in your own words.
-const HEADING = "TODO(content): section heading";
+const HEADING = "A bit about me";
 
-// TODO(content): one-line intro that sits under the heading. Optional.
-// Leave as empty string to omit it.
-const INTRO = "";
+const INTRO = "Software that businesses run on, not demos that look good in a pitch.";
 
-// TODO(content): replace each string with a real paragraph. Write 3–4.
-// Suggested beats:
-//   1. Who you are and how you got into building software
-//   2. Why you started Refacint — the gap you were solving
-//   3. The AI / automation focus and what that means in practice
-//   4. Lagos-and-global: local market knowledge, clients you've shipped for
 const PARAGRAPHS: string[] = [
-  "TODO(content): paragraph 1 — background, how you got into building",
-  "TODO(content): paragraph 2 — why you started Refacint and what gap you were solving",
-  "TODO(content): paragraph 3 — the AI / automation focus, what that looks like in practice",
-  "TODO(content): paragraph 4 — Lagos-and-global angle, clients, real delivery track record",
+  "I'm a software engineer. I studied computer science, then went back to learn software engineering properly — because understanding how something works and being able to build it well are two different things, and I wanted both.",
+  "These days I run a small agency called Refacint, where I build apps, AI agents, and automation for businesses. Most of my work starts the same way: someone's fighting software that almost fits, and I build the thing that actually does.",
+  "I don't just start typing. I map out the use cases, draw the UML diagrams and flowcharts, and figure out how it should work before I build it. And I build test-first — test-driven development — so the thing actually holds up instead of breaking the moment someone uses it differently than I expected.",
+  "A lot of my work now is AI and automation — handling the repetitive decisions and the manual steps nobody should still be doing by hand. The work I'm proudest of solves real problems, like a school exam system that runs offline, because you can't always count on the internet to hold.",
+  "Some of my work is for clients, some is my own — a school platform, an AI product I'm co-founding, a marketplace I built from scratch. What ties it together is simple: I like building things people actually depend on.",
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -39,13 +32,14 @@ export function About() {
   const isTodo = (s: string) => s.startsWith("TODO");
 
   return (
-    <section id="about" className="py-16 md:py-24">
+    <section id="about" className="bg-section-raised section-y">
       <div className="mx-auto max-w-3xl px-4 md:px-6">
 
         <SectionHeading
           eyebrow="About"
           title={HEADING}
           intro={INTRO || undefined}
+          headingSize="xl"
         />
 
         <div className="mt-10 space-y-5">
@@ -86,7 +80,7 @@ export function About() {
           <div className="mt-12">
             <Image
               src="/images/founder-about.jpg"
-              alt="Afeez"
+              alt="Moh"
               width={640}
               height={400}
               className="rounded-2xl object-cover"

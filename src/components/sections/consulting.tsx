@@ -14,13 +14,14 @@ export function Consulting() {
   const sorted = [...services].sort((a, b) => a.displayOrder - b.displayOrder);
 
   return (
-    <section id="consulting" className="py-16 md:py-24">
+    <section id="consulting" className="bg-section-base section-y">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
 
         <SectionHeading
           eyebrow="Consulting"
           title="What I build."
           intro="Six areas I work in. Every project starts with the real problem — not the nearest popular tool."
+          headingSize="xl"
         />
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -30,7 +31,7 @@ export function Consulting() {
             return (
               <article
                 key={service.id}
-                className="flex flex-col gap-5 rounded-2xl border border-border bg-card p-6"
+                className="flex flex-col gap-5 rounded-2xl border border-border bg-section-card shadow-sm p-6"
               >
                 {/* Icon */}
                 {Icon && (

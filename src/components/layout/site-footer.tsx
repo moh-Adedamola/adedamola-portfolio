@@ -10,9 +10,9 @@ const navLinks = [
 // TODO(content): replace "#" with real profile URLs
 // Brand icons can be added (react-icons or inline SVG) once URLs are confirmed.
 const socialLinks = [
-  { label: "LinkedIn", href: "#" },
-  { label: "X",        href: "#" },
-  { label: "GitHub",   href: "#" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/mohammed-adegbite-2a6990301/" },
+  { label: "X",        href: "https://x.com/adedamoh" },
+  { label: "GitHub",   href: "https://github.com/moh-Adedamola" },
 ];
 
 export function SiteFooter() {
@@ -25,7 +25,7 @@ export function SiteFooter() {
 
           {/* Founder line */}
           <div className="space-y-3">
-            <p className="font-display font-semibold text-foreground">Afeez</p>
+            <p className="font-display font-semibold text-foreground">Moh</p>
             <p className="text-sm leading-relaxed text-muted-foreground">
               Founder of{" "}
               <a
@@ -94,7 +94,7 @@ export function SiteFooter() {
       {/* Bottom bar */}
       <div className="mx-auto max-w-6xl px-4 py-4 md:px-6">
         <div className="flex flex-col gap-1 text-xs text-muted-foreground sm:flex-row sm:justify-between">
-          <span>© {year} Afeez. All rights reserved.</span>
+          <span>© {year} Moh. All rights reserved.</span>
           <span>
             Built by{" "}
             <a
