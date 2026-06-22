@@ -42,7 +42,7 @@ export function Hero() {
 
           {/* Eyebrow */}
           <motion.p
-            className="text-xs font-medium uppercase tracking-wider text-primary"
+            className="text-xs font-medium uppercase tracking-wider text-eyebrow"
             variants={item}
           >
             {site.role}
@@ -56,24 +56,13 @@ export function Hero() {
             {site.name}
           </motion.h1>
 
-          {/* Positioning line — renders real copy when site.tagline is set;
-              shows a clearly-marked placeholder until then */}
-          {site.tagline ? (
-            <motion.p
-              className="max-w-xl text-lg leading-relaxed text-muted-foreground"
-              variants={item}
-            >
-              {site.tagline}
-            </motion.p>
-          ) : (
-            <motion.p
-              className="max-w-xl rounded-lg border border-dashed border-border px-4 py-3 font-mono text-sm italic text-muted-foreground/50"
-              variants={item}
-            >
-              {/* TODO(content): write your positioning one-liner in site.ts */}
-              TODO(content): positioning one-liner
-            </motion.p>
-          )}
+          {/* Positioning line */}
+          <motion.p
+            className="max-w-xl text-lg leading-relaxed text-muted-foreground"
+            variants={item}
+          >
+            {site.tagline}
+          </motion.p>
 
           {/* CTAs */}
           <motion.div

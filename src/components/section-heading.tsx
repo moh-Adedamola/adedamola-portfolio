@@ -24,7 +24,7 @@ export function SectionHeading({
       align === "center" && "text-center",
       className,
     )}>
-      <p className="text-xs font-medium uppercase tracking-wider text-primary">
+      <p className="text-xs font-medium uppercase tracking-wider text-eyebrow">
         {eyebrow}
       </p>
       <h2 className={cn(

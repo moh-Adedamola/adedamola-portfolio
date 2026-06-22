@@ -12,6 +12,7 @@ export function ThemeToggle() {
   // resolvedTheme is undefined on the server. Render a stable placeholder
   // until the component mounts so the server and client HTML match.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- standard next-themes hydration-safe mount flag, not a cascading-render bug
     setMounted(true);
   }, []);
 

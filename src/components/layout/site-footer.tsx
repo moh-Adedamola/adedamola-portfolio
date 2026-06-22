@@ -1,14 +1,13 @@
 import { Separator } from "@/components/ui/separator";
 
 const navLinks = [
-  { label: "Work",       href: "#work"       },
-  { label: "Consulting", href: "#consulting" },
-  { label: "Writing",    href: "#writing"    },
-  { label: "Contact",    href: "#contact"    },
+  { label: "Projects", href: "#work"       },
+  { label: "Services", href: "#consulting" },
+  { label: "Blog",     href: "#writing"    },
+  { label: "Contact",  href: "#contact"    },
 ];
 
-// TODO(content): replace "#" with real profile URLs
-// Brand icons can be added (react-icons or inline SVG) once URLs are confirmed.
+// Brand icons can be added (react-icons or inline SVG) if needed.
 const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/mohammed-adegbite-2a6990301/" },
   { label: "X",        href: "https://x.com/adedamoh" },

@@ -15,10 +15,10 @@ import {
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 const navLinks = [
-  { label: "Work",       href: "#work"       },
-  { label: "Consulting", href: "#consulting" },
-  { label: "Writing",    href: "#writing"    },
-  { label: "Contact",    href: "#contact"    },
+  { label: "Projects", href: "#work"       },
+  { label: "Services", href: "#consulting" },
+  { label: "Blog",     href: "#writing"    },
+  { label: "Contact",  href: "#contact"    },
 ];
 
 export function SiteHeader() {

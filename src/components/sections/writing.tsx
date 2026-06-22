@@ -19,7 +19,7 @@ export async function Writing() {
   if (posts.length === 0) return null;
 
   return (
-    <section id="writing" className="bg-section-raised section-y">
+    <section id="writing" className="bg-section-base section-y">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
 
         <SectionHeading eyebrow="Writing" title="Thoughts on building." headingSize="xl" />

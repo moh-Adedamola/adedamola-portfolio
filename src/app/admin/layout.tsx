@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function AdminLayout({
   children,
 }: {
@@ -9,7 +11,7 @@ export default function AdminLayout({
         <span className="font-semibold text-sm">Admin</span>
         <nav className="flex items-center gap-4 text-sm">
           <a href="/admin/posts" className="hover:underline">Posts</a>
-          <a href="/" className="hover:underline">← View site</a>
+          <Link href="/" className="hover:underline">← View site</Link>
         </nav>
       </header>
       <main className="max-w-4xl mx-auto px-6 py-10">{children}</main>

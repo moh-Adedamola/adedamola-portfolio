@@ -10,5 +10,4 @@ export const site = {
   url:         siteUrl,
   agencyUrl:   "https://refacint.com",
   email:       "hello@refacint.com",
-  ogImage:     "/og.png",
 } as const;

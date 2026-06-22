@@ -38,13 +38,11 @@ export const metadata: Metadata = {
     url:         siteUrl,
     title:       defaultTitle,
     description: site.description,
-    images:      [{ url: site.ogImage }],
   },
   twitter: {
     card:        "summary_large_image",
     title:       defaultTitle,
     description: site.description,
-    images:      [site.ogImage],
   },
 };
 

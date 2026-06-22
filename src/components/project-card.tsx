@@ -89,7 +89,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-primary underline-offset-4 hover:underline"
+            className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-eyebrow underline-offset-4 hover:underline"
           >
             {linkLabel ?? "View live"} ↗
           </a>

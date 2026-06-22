@@ -6,7 +6,6 @@ import { Work } from "@/components/sections/work";
 import { Why } from "@/components/sections/why";
 import { Consulting } from "@/components/sections/consulting";
 import { Stack } from "@/components/sections/stack";
-import { Speaking } from "@/components/sections/speaking";
 import { Writing } from "@/components/sections/writing";
 import { Faq } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
@@ -54,7 +53,6 @@ export default function Home() {
       <Why />
       <Consulting />
       <Stack />
-      <Speaking />
       <Writing />
       <Faq />
       <Contact />

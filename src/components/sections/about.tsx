@@ -80,6 +80,7 @@ export function About() {
             alt="Mohammed Adegbite working"
             width={966}
             height={742}
+            priority
             className="rounded-2xl object-cover"
           />
         </div>
