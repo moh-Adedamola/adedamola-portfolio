@@ -7,7 +7,7 @@ export const faq: readonly Faq[] = [
   {
     question: "What kind of work do you take on?",
     answer:
-      "Custom software, AI agents, workflow automation, and CRMs — mostly " +
+      "Custom software, AI agents, CRMs, and content automation — mostly " +
       "for businesses that have a specific problem and want it solved " +
       "properly rather than patched. Most of my clients are Lagos-based, " +
       "though I work with teams further afield too.",
@@ -46,12 +46,6 @@ export const faq: readonly Faq[] = [
       "test an idea, a system to run your operations — I'd rather ship " +
       "you something that works and grows than something bloated you " +
       "didn't need yet.",
-  },
-  {
-    question: "Are you available for speaking?",
-    answer:
-      "Yes. If you have an event or topic in mind, get in touch at " +
-      "hello@refacint.com and I'll let you know if it's a fit.",
   },
   // TODO(content): add any other questions prospects or organisers regularly
   // ask you. Real questions, honest answers — no manufactured urgency.

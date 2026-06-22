@@ -26,21 +26,6 @@ export const services: readonly Service[] = [
     displayOrder: 1,
   },
   {
-    id:          "workflow-automation",
-    title:       "Workflow automation",
-    description:
-      "I connect your existing tools and cut out the manual steps in between. " +
-      "When something happens in one system, the right things happen " +
-      "automatically in the others.",
-    outcomes: [
-      "Fewer things fall through the gaps between tools",
-      "Less time spent copying data or chasing follow-up manually",
-      "Handoffs between steps are consistent and logged",
-    ],
-    icon:        "Zap",
-    displayOrder: 2,
-  },
-  {
     id:          "custom-crms",
     title:       "Custom CRMs",
     description:
@@ -52,7 +37,7 @@ export const services: readonly Service[] = [
       "Follow-up reminders and status changes are automatic",
     ],
     icon:        "Users",
-    displayOrder: 3,
+    displayOrder: 2,
   },
   {
     id:          "custom-software",
@@ -66,7 +51,7 @@ export const services: readonly Service[] = [
       "Can grow and change as the business does",
     ],
     icon:        "Code2",
-    displayOrder: 4,
+    displayOrder: 3,
   },
   {
     id:          "content-automation",
@@ -80,7 +65,7 @@ export const services: readonly Service[] = [
       "Frees you from the day-to-day production grind",
     ],
     icon:        "FileText",
-    displayOrder: 5,
+    displayOrder: 4,
   },
   {
     id:          "ai-consulting",
@@ -94,6 +79,6 @@ export const services: readonly Service[] = [
       "Avoid expensive experiments that don't ship",
     ],
     icon:        "Lightbulb",
-    displayOrder: 6,
+    displayOrder: 5,
   },
 ];

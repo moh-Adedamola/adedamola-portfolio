@@ -20,7 +20,7 @@ export function Consulting() {
         <SectionHeading
           eyebrow="Consulting"
           title="What I build."
-          intro="Six areas I work in. Every project starts with the real problem — not the nearest popular tool."
+          intro="The areas I work in. Every project starts with the real problem — not the nearest popular tool."
           headingSize="xl"
         />
 
@@ -51,7 +51,7 @@ export function Consulting() {
                 </p>
 
                 {/* Outcomes */}
-                <ul className="mt-auto space-y-2">
+                <ul className="space-y-2">
                   {service.outcomes.map((outcome, i) => (
                     <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
                       <span className="mt-0.5 shrink-0 text-primary" aria-hidden="true">
