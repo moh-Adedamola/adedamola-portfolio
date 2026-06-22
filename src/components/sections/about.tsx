@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SectionHeading } from "@/components/section-heading";
 import { site } from "@/data/site";
 
@@ -73,20 +74,15 @@ export function About() {
           {" "}— custom software and AI for businesses that want to move faster.
         </p>
 
-        {/*
-          TODO(asset): optional secondary founder photo.
-          When ready, add below using next/image:
-
-          <div className="mt-12">
-            <Image
-              src="/images/founder-about.jpg"
-              alt="Moh"
-              width={640}
-              height={400}
-              className="rounded-2xl object-cover"
-            />
-          </div>
-        */}
+        <div className="mt-12">
+          <Image
+            src="/images/founder-about.webp"
+            alt="Mohammed Adegbite working"
+            width={966}
+            height={742}
+            className="rounded-2xl object-cover"
+          />
+        </div>
 
       </div>
     </section>
