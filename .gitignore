@@ -17,11 +17,6 @@
 /.next/
 /out/
 
-# production
-/build
-# build/ in this repo holds planning docs, not build output — keep it tracked
-!/build
-
 # misc
 .DS_Store
 *.pem
@@ -45,6 +40,13 @@ src/generated/
 
 # Claude Code local state (memory files, session data — not for repo)
 .claude/
+
+# AI-tooling / internal planning docs — kept locally, not for a public repo
+CLAUDE.md
+AGENTS.md
+context/
+build/
+scaffold.ps1
 
 # typescript
 *.tsbuildinfo
