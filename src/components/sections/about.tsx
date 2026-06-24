@@ -24,7 +24,7 @@ const PARAGRAPHS: string[] = [
   "These days I run a small agency called Refacint, where I build apps, AI agents, and automation for businesses. Most of my work starts the same way: someone's fighting software that almost fits, and I build the thing that actually does.",
   "I don't just start typing. I map out the use cases, draw the UML diagrams and flowcharts, and figure out how it should work before I build it. And I build test-first — test-driven development — so the thing actually holds up instead of breaking the moment someone uses it differently than I expected.",
   "A lot of my work now is AI and automation — handling the repetitive decisions and the manual steps nobody should still be doing by hand. The work I'm proudest of solves real problems, like a school exam system that runs offline, because you can't always count on the internet to hold.",
-  "Some of my work is for clients, some is my own — a school platform, an AI product I'm co-founding, a marketplace I built from scratch. What ties it together is simple: I like building things people actually depend on.",
+  "Some of my work is for clients, some is my own — a school platform, an AI integrated product I'm co-founding, a marketplace that i am building from scratch. What ties it together is simple: I like building things people actually depend on.",
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -71,7 +71,7 @@ export function About() {
           >
             Refacint Technologies
           </a>
-          {" "}— custom software and AI for businesses that want to move faster.
+          {" "}— custom systems and AI for businesses that want to move faster.
         </p>
 
         <div className="mt-12">

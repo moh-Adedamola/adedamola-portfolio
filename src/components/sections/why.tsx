@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/section-heading";
 const DIFFERENTIATORS = [
   {
     label: "Market",
-    heading: "I build for who I build for.",
+    heading: "I build for people like you.",
     body: "I build for founders and small businesses who need software that just works — not enterprise tools bent to fit, not demos that fall apart in real use. I get the constraints, because I work in them.",
   },
   {

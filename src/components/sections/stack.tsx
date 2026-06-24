@@ -10,7 +10,13 @@ import {
   SiOpenai,
   SiVercel,
   SiCloudinary,
+  SiPython,
+  SiMongodb,
+  SiMysql,
+  SiClaude,
+  SiJavascript,
 } from "react-icons/si";
+import { FaJava } from "react-icons/fa6";
 import { SectionHeading } from "@/components/section-heading";
 import { stack } from "@/data/stack";
 
@@ -34,6 +40,17 @@ const TECH_ICONS: Partial<Record<string, TechIconEntry>> = {
   "OpenAI":       { Icon: SiOpenai,     color: "#412991", darkColor: "#a78bfa" },
   "Vercel":       { Icon: SiVercel,     color: "#000000", darkColor: "#ffffff" },
   "Cloudinary":   { Icon: SiCloudinary, color: "#3448C5", darkColor: "#7a8eff" },
+  // Simple Icons dropped the Java logo for trademark reasons, so this uses
+  // Font Awesome's coffee-cup glyph instead.
+  "Java":         { Icon: FaJava,       color: "#f89820", darkColor: "#f89820" },
+  "Python":       { Icon: SiPython,     color: "#3776AB", darkColor: "#6aa9d8" },
+  "MongoDB":      { Icon: SiMongodb,    color: "#47A248", darkColor: "#6fcf73" },
+  "MySQL":        { Icon: SiMysql,      color: "#4479A1", darkColor: "#6b9cc4" },
+  "Claude":       { Icon: SiClaude,     color: "#D97757", darkColor: "#D97757" },
+  // Official JS yellow (#F7DF1E) is too pale against the near-white light
+  // card background, so light mode uses a deeper amber/gold of the same
+  // hue; dark mode keeps the bright official yellow, which pops fine there.
+  "Javascript":   { Icon: SiJavascript, color: "#8a6d00", darkColor: "#F7DF1E" },
 };
 
 export function Stack() {

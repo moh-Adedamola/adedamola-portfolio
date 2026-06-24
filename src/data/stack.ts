@@ -12,19 +12,25 @@ export const stack: readonly StackItem[] = [
   { name: "TypeScript",   category: "frontend" },
   { name: "Tailwind CSS", category: "frontend" },
   { name: "shadcn/ui",    category: "frontend" },
+  { name: "Javascript",   category: "frontend" },
 
   // Backend
   { name: "Node.js",      category: "backend"  },
   { name: "Prisma",       category: "backend"  },
   { name: "PostgreSQL",   category: "backend"  },
+  { name: "Java",         category: "backend"  },
+  { name: "Python",       category: "backend"  },
+  { name: "MongoDB",   category: "backend"  },
+  { name: "MySQL",   category: "backend"  },
 
   // AI
   { name: "OpenAI",       category: "ai"       },
+  { name: "Claude",       category: "ai"       },
 
   // Infra
-  { name: "Vercel",       category: "infra"    },
+  
   { name: "Neon",         category: "infra"    },
-  { name: "Cloudinary",   category: "infra"    },
+  
 
   // TODO(content): add any other tools you regularly build with
   // (e.g. specific automation platforms, other AI providers, etc.)

@@ -10,18 +10,27 @@ export const metadata: Metadata = {
   description: `Writing on software, AI, and automation from ${site.personName}.`,
 };
 
+async function getPublishedPosts() {
+  try {
+    return await db.post.findMany({
+      where: { status: "PUBLISHED" },
+      orderBy: { publishedAt: "desc" },
+      select: {
+        slug: true,
+        title: true,
+        excerpt: true,
+        coverImage: true,
+        publishedAt: true,
+      },
+    });
+  } catch (error) {
+    console.error("BlogPage: failed to load posts", error);
+    return [];
+  }
+}
+
 export default async function BlogPage() {
-  const posts = await db.post.findMany({
-    where: { status: "PUBLISHED" },
-    orderBy: { publishedAt: "desc" },
-    select: {
-      slug: true,
-      title: true,
-      excerpt: true,
-      coverImage: true,
-      publishedAt: true,
-    },
-  });
+  const posts = await getPublishedPosts();
 
   return (
     <section className="max-w-3xl mx-auto px-6 py-20">

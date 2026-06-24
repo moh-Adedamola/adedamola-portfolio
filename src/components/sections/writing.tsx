@@ -2,19 +2,30 @@ import Link from "next/link";
 import { SectionHeading } from "@/components/section-heading";
 import { db } from "@/lib/db";
 
+async function getRecentPosts() {
+  try {
+    return await db.post.findMany({
+      where: { status: "PUBLISHED" },
+      orderBy: { publishedAt: "desc" },
+      take: 3,
+      select: {
+        slug: true,
+        title: true,
+        excerpt: true,
+        coverImage: true,
+        publishedAt: true,
+      },
+    });
+  } catch (error) {
+    // A DB hiccup (e.g. Neon cold-start/autosuspend) shouldn't 500 the
+    // whole homepage — fall back to the empty state below instead.
+    console.error("Writing: failed to load posts", error);
+    return [];
+  }
+}
+
 export async function Writing() {
-  const posts = await db.post.findMany({
-    where: { status: "PUBLISHED" },
-    orderBy: { publishedAt: "desc" },
-    take: 3,
-    select: {
-      slug: true,
-      title: true,
-      excerpt: true,
-      coverImage: true,
-      publishedAt: true,
-    },
-  });
+  const posts = await getRecentPosts();
 
   if (posts.length === 0) return null;
 

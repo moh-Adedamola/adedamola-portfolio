@@ -7,45 +7,43 @@ export const faq: readonly Faq[] = [
   {
     question: "What kind of work do you take on?",
     answer:
-      "Custom software, AI agents, CRMs, and content automation — mostly " +
+      "Custom software and web applications, AI agents, CRMs, and content automation — mostly " +
       "for businesses that have a specific problem and want it solved " +
-      "properly rather than patched. Most of my clients are Lagos-based, " +
-      "though I work with teams further afield too.",
+      "properly rather than patched over.  " ,
   },
   {
     question: "What does it cost?",
     answer:
-      "I don't publish fixed prices — every project is scoped to the actual " +
-      "problem. Terms are flexible and agreed before any work starts. " +
-      "Reach out and tell me what you're trying to solve; I'll tell you " +
-      "whether it's something I can help with and what that looks like.",
+      "It depends on what you're building — a focused tool and a full " +
+      "platform aren't the same job. I'll give you a clear quote before " +
+      "any work starts, so there are no surprises. If your budget's " +
+      "tight, tell me; I'd rather scope something that fits than " +
+      "overpromise.",
   },
   {
     question: "How long does a project take?",
     answer:
-      "Depends what you're building, but most projects start showing " +
-      "real progress in weeks, not months. After we talk through what " +
-      "you need, I'll give you a clear timeline up front — no vague " +
-      "\"it'll be ready when it's ready.\" I work in weekly chunks, so " +
-      "you see it taking shape as we go.",
+      "A small, focused build can take a few weeks; something larger " +
+      "runs longer. I'll give you a realistic timeline up front, and " +
+      "I'd rather quote honestly than promise a date I can't hit. " +
+      "You'll see progress as we go, not just at the end.",
   },
   {
     question: "How does an engagement start?",
     answer:
-      "With a conversation. You tell me what's slowing you down or what " +
-      "you want built — you don't need to know the technical side. A " +
-      "few days later I come back with a plan: what I'll build, how " +
-      "long it'll take, what it costs. If it works for you, we start, " +
-      "and I'm around after launch too.",
+      "We talk through the problem first — what's broken, what you've " +
+      "tried, what \"solved\" looks like for you. If it's a fit, I scope " +
+      "it properly (use cases, how it should work) before writing any " +
+      "code. No long contracts to start; we agree on the first piece " +
+      "and go from there.",
   },
   {
     question: "Do you work with early-stage startups?",
     answer:
-      "Yeah, a lot. I work with founders and small businesses who need " +
-      "something real in people's hands without overbuilding. An MVP to " +
-      "test an idea, a system to run your operations — I'd rather ship " +
-      "you something that works and grows than something bloated you " +
-      "didn't need yet.",
+      "Yes — a lot of my work is with founders building their first " +
+      "real version of something. I'll be straight with you about " +
+      "what's worth building now versus later, so you spend your " +
+      "runway on what actually moves things forward.",
   },
   // TODO(content): add any other questions prospects or organisers regularly
   // ask you. Real questions, honest answers — no manufactured urgency.

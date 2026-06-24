@@ -40,7 +40,7 @@ export function Contact() {
             <SectionHeading
               eyebrow="Contact"
               title="Let's work together."
-              intro="Have a project in mind or want to explore what's possible? Send a message and I'll get back to you."
+              intro="Got a problem worth solving? Tell me what you're dealing with and I'll tell you honestly whether I can help — and how I'd approach it."
               headingSize="xl"
             />
             <p className="text-sm text-muted-foreground">
