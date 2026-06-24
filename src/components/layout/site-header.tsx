@@ -86,7 +86,7 @@ export function SiteHeader() {
           onClick={handleLogoClick}
           className="rounded-sm font-display font-semibold text-foreground transition-opacity outline-none hover:opacity-80 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
-          Moh
+          MOH
         </Link>
 
         {/* Desktop nav */}

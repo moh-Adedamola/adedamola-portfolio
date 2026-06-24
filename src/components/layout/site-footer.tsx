@@ -25,7 +25,7 @@ export function SiteFooter() {
 
           {/* Founder line */}
           <div className="space-y-3">
-            <p className="font-display font-semibold text-foreground">Moh</p>
+            <p className="font-display font-semibold text-foreground">MOH</p>
             <p className="text-sm leading-relaxed text-muted-foreground">
               Founder of{" "}
               <a
@@ -36,7 +36,7 @@ export function SiteFooter() {
               >
                 Refacint Technologies
               </a>
-              , a Lagos-based software and AI agency.
+              , a  software and AI agency.
             </p>
           </div>
 
@@ -99,7 +99,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-4 py-4 md:px-6">
         <div className="flex flex-col gap-1 text-xs text-muted-foreground sm:flex-row sm:justify-between">
           <span>© {year} Moh. All rights reserved.</span>
-          <span>
+          {/* <span>
             Built by{" "}
             <a
               href="https://refacint.com"
@@ -109,7 +109,7 @@ export function SiteFooter() {
             >
               Refacint Technologies
             </a>
-          </span>
+          </span> */}
         </div>
       </div>
     </footer>
