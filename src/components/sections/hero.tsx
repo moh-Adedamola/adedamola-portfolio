@@ -74,9 +74,15 @@ export function Hero() {
             </Button>
             <a
               href="#work"
-              className="text-sm font-medium text-foreground underline-offset-4 hover:underline"
+              className="group inline-flex items-center gap-1 text-sm font-medium text-foreground underline-offset-4 hover:underline"
             >
-              See my work →
+              See my work
+              <span
+                className="inline-block transition-transform duration-200 group-hover:translate-x-0.5"
+                aria-hidden="true"
+              >
+                →
+              </span>
             </a>
           </motion.div>
 

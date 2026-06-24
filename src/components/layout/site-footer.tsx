@@ -1,3 +1,5 @@
+import { ArrowRight } from "lucide-react";
+import { FaLinkedin, FaXTwitter, FaGithub } from "react-icons/fa6";
 import { Separator } from "@/components/ui/separator";
 
 const navLinks = [
@@ -7,11 +9,10 @@ const navLinks = [
   { label: "Contact",  href: "#contact"    },
 ];
 
-// Brand icons can be added (react-icons or inline SVG) if needed.
 const socialLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/mohammed-adegbite-2a6990301/" },
-  { label: "X",        href: "https://x.com/adedamoh" },
-  { label: "GitHub",   href: "https://github.com/moh-Adedamola" },
+  { label: "LinkedIn",    href: "https://www.linkedin.com/in/mohammed-adegbite-2a6990301/", Icon: FaLinkedin },
+  { label: "X (Twitter)", href: "https://x.com/adedamoh",                                    Icon: FaXTwitter },
+  { label: "GitHub",      href: "https://github.com/moh-Adedamola",                          Icon: FaGithub   },
 ];
 
 export function SiteFooter() {
@@ -49,9 +50,13 @@ export function SiteFooter() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="group inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {link.label}
+                    <ArrowRight
+                      className="size-3.5 -translate-x-1 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100"
+                      aria-hidden="true"
+                    />
                   </a>
                 </li>
               ))}
@@ -69,17 +74,17 @@ export function SiteFooter() {
             >
               hello@refacint.com
             </a>
-            <div className="flex gap-4 pt-1">
-              {socialLinks.map(({ label, href }) => (
+            <div className="flex gap-2 pt-1">
+              {socialLinks.map(({ label, href, Icon }) => (
                 <a
                   key={label}
                   href={href}
                   aria-label={label}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className="flex size-10 items-center justify-center rounded-full text-muted-foreground outline-none transition-colors hover:text-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
-                  {label}
+                  <Icon className="size-5" aria-hidden="true" />
                 </a>
               ))}
             </div>
