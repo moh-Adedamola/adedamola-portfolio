@@ -16,7 +16,7 @@ const DIFFERENTIATORS = [
     // Why: MOLEK Schools is a real paid client; EventIQ is also a paid client
     // build (in progress). Klassrun is the founder's own startup, not a client
     // engagement — the copy must keep that distinction honest.
-    body: "MOLEK Schools runs on a platform I built — and pays me to keep building it. EventIQ is another client build in progress: a vendor marketplace with escrow payments. Klassrun is my own — an AI school platform I'm co-founding. Real projects, real stakes.",
+    body: "MOLEK Schools runs on a platform I built . EventIQ is another client build in progress: a vendor marketplace with escrow payments. Klassrun is my own — an AI school platform I'm co-founding. Real projects, real stakes.",
   },
   {
     label: "Approach",
