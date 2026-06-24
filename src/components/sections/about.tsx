@@ -17,8 +17,6 @@ import { site } from "@/data/site";
 // but write it in your own words.
 const HEADING = "A bit about me";
 
-const INTRO = "Software that businesses run on, not demos that look good in a pitch.";
-
 const PARAGRAPHS: string[] = [
   "I'm a software engineer. I studied computer science, then went back to learn software engineering properly, because understanding how something works and being able to build it well are two different things, and I wanted both.",
   "These days I run a small agency called Refacint Technologies, where I build apps, AI agents, and automation for businesses. Most of my work starts the same way: I don't just start building. I map out the use cases, draw the UML diagrams and flowcharts, and figure out how things should work before I build so that everything actually holds up instead of breaking the moment someone uses the system differently than I expected.",
