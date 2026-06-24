@@ -36,7 +36,6 @@ export function About() {
         <SectionHeading
           eyebrow="About"
           title={HEADING}
-          intro={INTRO || undefined}
           headingSize="xl"
         />
 
