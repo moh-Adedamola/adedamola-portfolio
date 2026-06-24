@@ -29,7 +29,7 @@ export const stack: readonly StackItem[] = [
 
   // Infra
   
-  { name: "Neon",         category: "infra"    },
+
   
 
   // TODO(content): add any other tools you regularly build with
