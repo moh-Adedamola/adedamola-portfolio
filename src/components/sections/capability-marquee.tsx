@@ -15,12 +15,12 @@ export function CapabilityMarquee() {
       {/* Animated track — aria-hidden so screen readers skip the duplicate */}
       <div
         aria-hidden
-        className="flex w-max animate-marquee motion-reduce:animate-none"
+        className="flex w-max animate-marquee hover:[animation-play-state:paused] motion-reduce:animate-none"
       >
         {track.map((cap, i) => (
           <span key={i} className="flex items-center">
             <span className="mx-5 text-primary select-none" aria-hidden>•</span>
-            <span className="text-xs font-medium uppercase tracking-widest text-foreground/70 whitespace-nowrap">
+            <span className="font-display text-label font-medium uppercase text-foreground/70 whitespace-nowrap">
               {cap}
             </span>
           </span>

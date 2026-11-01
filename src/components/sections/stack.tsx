@@ -18,6 +18,7 @@ import {
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa6";
 import { SectionHeading } from "@/components/section-heading";
+import { RevealGroup, RevealItem } from "@/components/reveal";
 import { stack } from "@/data/stack";
 
 interface TechIconEntry {
@@ -56,7 +57,7 @@ const TECH_ICONS: Partial<Record<string, TechIconEntry>> = {
 export function Stack() {
   return (
     <section id="stack" className="bg-section-raised section-y">
-      <div className="mx-auto max-w-6xl px-4 md:px-6">
+      <div className="shell">
         <SectionHeading
           eyebrow="Stack"
           title="Tools I build with."
@@ -64,13 +65,13 @@ export function Stack() {
           headingSize="xl"
         />
 
-        <ul className="mt-12 grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-6">
+        <RevealGroup as="ul" stagger={0.04} className="mt-12 grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-6">
           {stack.map((item) => {
             const entry = TECH_ICONS[item.name];
 
             return (
-              <li key={item.name}>
-                <div className="flex flex-col items-center gap-3 rounded-2xl border border-border bg-section-card shadow-sm p-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+              <RevealItem as="li" key={item.name}>
+                <div className="flex flex-col items-center gap-3 rounded-xl border border-border bg-section-card shadow-sm p-4 transition-[transform,border-color,box-shadow] duration-200 ease-standard hover:scale-105 hover:border-foreground/25 hover:shadow-md">
                   {entry ? (
                     <span
                       className="icon-col"
@@ -84,7 +85,7 @@ export function Stack() {
                     </span>
                   ) : (
                     <span
-                      className="flex h-11 w-11 items-center justify-center rounded-xl bg-muted text-sm font-bold tracking-tight text-muted-foreground"
+                      className="flex h-11 w-11 items-center justify-center rounded-md bg-muted text-sm font-bold tracking-tight text-muted-foreground"
                       aria-label={item.name}
                     >
                       {item.name
@@ -99,10 +100,10 @@ export function Stack() {
                     {item.name}
                   </span>
                 </div>
-              </li>
+              </RevealItem>
             );
           })}
-        </ul>
+        </RevealGroup>
       </div>
     </section>
   );

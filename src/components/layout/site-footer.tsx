@@ -20,12 +20,12 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">
+      <div className="shell py-12 md:py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
 
           {/* Founder line */}
           <div className="space-y-3">
-            <p className="font-display font-semibold text-foreground">MOH</p>
+            <p className="font-display font-medium text-foreground">MOH</p>
             <p className="text-sm leading-relaxed text-muted-foreground">
               Founder of{" "}
               <a
@@ -42,7 +42,7 @@ export function SiteFooter() {
 
           {/* Section nav */}
           <div className="space-y-4">
-            <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+            <p className="text-label font-medium uppercase text-muted-foreground">
               Navigate
             </p>
             <ul className="space-y-2">
@@ -54,7 +54,7 @@ export function SiteFooter() {
                   >
                     {link.label}
                     <ArrowRight
-                      className="size-3.5 -translate-x-1 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100"
+                      className="size-3.5 -translate-x-1 opacity-0 transition-all duration-200 ease-standard group-hover:translate-x-0 group-hover:opacity-100"
                       aria-hidden="true"
                     />
                   </a>
@@ -65,7 +65,7 @@ export function SiteFooter() {
 
           {/* Contact + socials */}
           <div className="space-y-4">
-            <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+            <p className="text-label font-medium uppercase text-muted-foreground">
               Get in touch
             </p>
             <a
@@ -96,7 +96,7 @@ export function SiteFooter() {
       <Separator />
 
       {/* Bottom bar */}
-      <div className="mx-auto max-w-6xl px-4 py-4 md:px-6">
+      <div className="shell py-4">
         <div className="flex flex-col gap-1 text-xs text-muted-foreground sm:flex-row sm:justify-between">
           <span>© {year} Moh. All rights reserved.</span>
           {/* <span>

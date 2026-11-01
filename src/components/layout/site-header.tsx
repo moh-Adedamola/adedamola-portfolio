@@ -79,12 +79,12 @@ export function SiteHeader() {
           : "bg-transparent",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
+      <div className="shell flex h-16 items-center justify-between">
 
         <Link
           href="/"
           onClick={handleLogoClick}
-          className="rounded-sm font-display font-semibold text-foreground transition-opacity outline-none hover:opacity-80 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="rounded-sm font-display font-medium text-foreground transition-opacity outline-none hover:opacity-80 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           MOH
         </Link>
@@ -160,11 +160,11 @@ export function SiteHeader() {
                               key={link.href}
                               href={link.href}
                               onClick={handleNavClick}
-                              className="group flex items-center justify-between border-b border-border py-4 font-display text-lg font-bold text-foreground outline-none transition-colors hover:text-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                              className="group flex items-center justify-between border-b border-border py-4 font-display text-h4 text-foreground outline-none transition-colors duration-300 ease-standard hover:bg-foreground/[0.02] hover:text-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                             >
                               {link.label}
                               <ArrowRight
-                                className="size-5 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-primary"
+                                className="size-5 shrink-0 text-muted-foreground transition-transform duration-200 ease-standard group-hover:translate-x-0.5 group-hover:text-primary"
                                 aria-hidden="true"
                               />
                             </a>
@@ -174,7 +174,7 @@ export function SiteHeader() {
                         <a
                           href="#contact"
                           onClick={handleNavClick}
-                          className="mt-6 block rounded-full bg-primary px-6 py-4 text-center font-semibold text-primary-foreground outline-none transition-colors hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                          className="mt-6 block rounded-md bg-primary px-6 py-4 text-center font-semibold text-primary-foreground outline-none transition-colors hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                         >
                           Work with me
                         </a>

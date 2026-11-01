@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { DM_Sans, Inter } from "next/font/google";
+import { Schibsted_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Providers } from "@/components/providers";
@@ -9,17 +10,22 @@ import { site, siteUrl } from "@/data/site";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const inter = Inter({
-  variable: "--font-sans",
+const schibstedGrotesk = Schibsted_Grotesk({
+  variable: "--font-body",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+// Chillax (Fontshare, ITF Free Font License) — not on Google Fonts, self-hosted
+const chillax = localFont({
   variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  src: [
+    { path: "../fonts/Chillax-300.woff2", weight: "300", style: "normal" },
+    { path: "../fonts/Chillax-400.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/Chillax-500.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/Chillax-600.woff2", weight: "600", style: "normal" },
+  ],
   display: "swap",
 });
 
@@ -56,7 +62,7 @@ export default function RootLayout({
       <html
         lang="en"
         suppressHydrationWarning
-        className={`${inter.variable} ${dmSans.variable}`}
+        className={`${schibstedGrotesk.variable} ${chillax.variable}`}
       >
         <body className="min-h-screen bg-background text-foreground font-sans antialiased">
           <Providers>

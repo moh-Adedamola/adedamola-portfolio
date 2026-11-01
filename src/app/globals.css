@@ -134,25 +134,97 @@
   --color-section-raised:          hsl(var(--section-raised));
   --color-section-card:            hsl(var(--section-card));
 
-  /* Border radius — four tiers from ui-context.md */
-  --radius-sm: 0.375rem;  /* badges, inline elements  → rounded-sm */
-  --radius:    0.625rem;  /* buttons, inputs (base)   → rounded     */
-  --radius-lg: 1rem;      /* cards, panels            → rounded-lg  */
-  --radius-xl: 1.5rem;    /* large feature blocks     → rounded-xl  */
+  /* Border radius — sharp system. Avatars / icon buttons use rounded-full. */
+  --radius-xs: 2px;       /* tiny marks (tooltip arrow)        → rounded-xs  */
+  --radius-sm: 3px;       /* chips, tags, badges, menu items   → rounded-sm  */
+  --radius:    4px;       /* base                              → rounded     */
+  --radius-md: 4px;       /* buttons, inputs, popovers         → rounded-md  */
+  --radius-lg: 8px;       /* images, inner panels              → rounded-lg  */
+  --radius-xl: 12px;      /* cards, modals                     → rounded-xl  */
 
   /* Font families — values injected by next/font in layout.tsx */
-  --font-sans:    var(--font-sans);
-  --font-display: var(--font-display);
+  --font-sans:    var(--font-body), system-ui, sans-serif;
+  --font-display: var(--font-display), system-ui, sans-serif;
+  --font-heading: var(--font-display), system-ui, sans-serif;
+
+  /* Type scale — fluid, display font, tight tracking.
+     Each token bundles size + line-height + tracking (+ weight). */
+  --text-hero:                  clamp(3.25rem, 13vw, 15rem);
+  --text-hero--line-height:     0.85;
+  --text-hero--letter-spacing:  -0.05em;
+  --text-hero--font-weight:     300;
+
+  --text-h2:                    clamp(2.25rem, 5vw, 4.5rem);
+  --text-h2--line-height:       1.05;
+  --text-h2--letter-spacing:    -0.02em;
+  --text-h2--font-weight:       400;
+
+  --text-h3:                    clamp(1.5rem, 2.6vw, 2.25rem);
+  --text-h3--line-height:       1.15;
+  --text-h3--letter-spacing:    -0.026em;
+  --text-h3--font-weight:       400;
+
+  --text-h4:                    clamp(1.25rem, 1.9vw, 1.625rem);
+  --text-h4--line-height:       1.2;
+  --text-h4--letter-spacing:    -0.02em;
+  --text-h4--font-weight:       400;
+
+  --text-label:                 12px;
+  --text-label--line-height:    1.3;
+  --text-label--letter-spacing: 0.5px;
+
+  /* Single easing curve for all motion → ease-standard */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Accordion animations */
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up:   accordion-up   0.2s ease-out;
 
   /* Hero / section entrance */
-  --animate-fade-up: fade-up 0.6s cubic-bezier(0.32, 0.72, 0, 1) both;
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
 
   /* Capability marquee */
-  --animate-marquee: marquee 28s linear infinite;
+  --animate-marquee: marquee 45s linear infinite;
+}
+
+/* ── Body copy — 16px mobile → 18px desktop */
+@utility text-body {
+  font-size: 1rem;
+  line-height: 1.625;
+  @media (width >= 48rem) {
+    font-size: 1.125rem;
+  }
+}
+
+/* ── Layout container — 84rem max, 1.25rem / 5rem side padding */
+@utility shell {
+  width: 100%;
+  max-width: 84rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (width >= 48rem) {
+    padding-inline: 5rem;
+  }
+}
+
+/* ── Section label — small uppercase text preceded by a 32px hairline */
+@utility eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 12px;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  &::before {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 1px;
+    flex-shrink: 0;
+    background-color: currentColor;
+  }
 }
 
 /* ── Entrance animation keyframes */
@@ -182,6 +254,25 @@ body {
   color: hsl(var(--foreground));
 }
 
+/* Layered so Tailwind utilities on individual elements still win */
+@layer base {
+  body {
+    font-size: 1rem;
+    line-height: 1.625;
+    font-weight: 500;
+  }
+
+  @media (min-width: 768px) {
+    body { font-size: 1.125rem; }
+  }
+
+  /* Headings default to the display face at light/regular weights */
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+  }
+}
+
 /* ── Tech-icon brand colors — vars set on the span itself, no inheritance hop */
 .icon-col         { color: var(--icon-color); }
 .dark .icon-col   { color: var(--icon-color-d); }
@@ -190,14 +281,14 @@ body {
    Single source of truth for section vertical padding.
    Unlayered so it can't be accidentally overridden by Tailwind utilities. */
 .section-y {
-  padding-top:    6rem;   /* 96 px  — mobile  */
-  padding-bottom: 6rem;
+  padding-top:    3.75rem;  /* 60 px  — mobile  */
+  padding-bottom: 3.75rem;
 }
 
 @media (min-width: 768px) {
   .section-y {
-    padding-top:    8rem;  /* 128 px — desktop */
-    padding-bottom: 8rem;
+    padding-top:    7.5rem;  /* 120 px — desktop */
+    padding-bottom: 7.5rem;
   }
 }
 

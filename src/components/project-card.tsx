@@ -26,7 +26,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const hasStory = !isTodo(summary) && (problem || approach || outcome);
 
   return (
-    <article className="group flex flex-col rounded-2xl border border-border bg-section-card shadow-sm overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+    <article className="group flex w-full flex-col rounded-xl border border-border bg-section-card shadow-sm overflow-hidden transition-[border-color,box-shadow] duration-300 ease-standard hover:border-foreground/20 hover:shadow-lg">
 
       {/* Image */}
       {imageUrl ? (
@@ -36,7 +36,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             alt={name}
             fill
             sizes="(max-width: 640px) 100vw, 50vw"
-            className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            className="object-cover transition-transform duration-700 ease-standard group-hover:scale-105"
           />
         </div>
       ) : (
@@ -54,14 +54,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <p className="text-xs text-muted-foreground">
             {client}{year ? ` · ${year}` : ""}
           </p>
-          <h3 className="mt-1 text-lg font-semibold text-card-foreground">
+          <h3 className="mt-1 font-display text-h4 text-card-foreground">
             {name}
           </h3>
         </div>
 
         {/* Summary / story */}
         {hasStory ? (
-          <div className="space-y-2 text-sm leading-relaxed text-muted-foreground">
+          <div className="space-y-2 text-base leading-relaxed text-muted-foreground">
             {problem   && <p>{problem}</p>}
             {approach  && <p>{approach}</p>}
             {outcome   && <p className="font-medium text-foreground">{outcome}</p>}
@@ -72,13 +72,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
             TODO(content): project summary
           </p>
         ) : (
-          <p className="text-sm leading-relaxed text-muted-foreground">{summary}</p>
+          <p className="text-base leading-relaxed text-muted-foreground">{summary}</p>
         )}
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mt-auto pt-2">
           {tags.map((tag) => (
-            <Badge key={tag} variant="secondary" className="text-xs">
+            <Badge
+              key={tag}
+              variant="secondary"
+              className="text-xs transition-transform duration-200 ease-standard hover:scale-105"
+            >
               {TAG_LABELS[tag]}
             </Badge>
           ))}
@@ -90,11 +94,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
             href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group mt-1 inline-flex items-center gap-1 text-xs font-medium text-eyebrow underline-offset-4 hover:underline"
+            className="group/link mt-1 inline-flex items-center gap-1 text-xs font-medium text-eyebrow underline-offset-4 hover:underline"
           >
             {linkLabel ?? "View live"}
             <span
-              className="inline-block transition-transform duration-200 group-hover:translate-x-0.5"
+              className="inline-block transition-transform duration-200 ease-standard group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
               aria-hidden="true"
             >
               ↗

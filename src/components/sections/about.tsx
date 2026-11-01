@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { SectionHeading } from "@/components/section-heading";
+import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 import { site } from "@/data/site";
 
 // ─── About copy ───────────────────────────────────────────────────────────────
@@ -31,7 +32,7 @@ export function About() {
 
   return (
     <section id="about" className="bg-section-raised section-y">
-      <div className="mx-auto max-w-3xl px-4 md:px-6">
+      <div className="shell"><div className="mx-auto max-w-3xl">
 
         <SectionHeading
           eyebrow="About"
@@ -39,22 +40,23 @@ export function About() {
           headingSize="xl"
         />
 
-        <div className="mt-10 space-y-5">
+        <RevealGroup className="mt-10 space-y-5">
           {PARAGRAPHS.map((p, i) =>
             isTodo(p) ? (
-              <p
+              <RevealItem
+                as="p"
                 key={i}
                 className="rounded-lg border border-dashed border-border px-4 py-3 font-mono text-sm italic text-muted-foreground/50"
               >
                 {p}
-              </p>
+              </RevealItem>
             ) : (
-              <p key={i} className="text-base leading-relaxed text-muted-foreground">
+              <RevealItem as="p" key={i} className="text-body text-muted-foreground">
                 {p}
-              </p>
+              </RevealItem>
             )
           )}
-        </div>
+        </RevealGroup>
 
         {/* Required cross-link to the agency */}
         <p className="mt-10 text-sm text-muted-foreground">
@@ -70,18 +72,18 @@ export function About() {
           {" "}— custom systems and AI for businesses that want to move faster.
         </p>
 
-        <div className="mt-12">
+        <Reveal className="mt-12">
           <Image
             src="/images/founder-about.webp"
             alt="Mohammed Adegbite working"
             width={966}
             height={742}
             priority
-            className="rounded-2xl object-cover"
+            className="rounded-xl object-cover"
           />
-        </div>
+        </Reveal>
 
-      </div>
+      </div></div>
     </section>
   );
 }

@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { SectionHeading } from "@/components/section-heading";
+import { Reveal } from "@/components/reveal";
 import { faq } from "@/data/faq";
 
 function isTodo(s: string) {
@@ -16,11 +17,12 @@ function isTodo(s: string) {
 export function Faq() {
   return (
     <section id="faq" className="bg-section-raised section-y">
-      <div className="mx-auto max-w-3xl px-4 md:px-6">
+      <div className="shell"><div className="mx-auto max-w-3xl">
 
         <SectionHeading eyebrow="FAQ" title="Common questions." headingSize="xl" />
 
-        <Accordion type="single" collapsible className="mt-10 w-full">
+        <Reveal className="mt-10">
+        <Accordion type="single" collapsible className="w-full">
           {faq.map((item, i) => (
             <AccordionItem key={i} value={`faq-${i}`}>
               <AccordionTrigger>{item.question}</AccordionTrigger>
@@ -31,7 +33,7 @@ export function Faq() {
                     {item.answer}
                   </span>
                 ) : (
-                  <p className="text-sm leading-relaxed text-muted-foreground">
+                  <p className="text-base leading-relaxed text-muted-foreground">
                     {item.answer}
                   </p>
                 )}
@@ -39,8 +41,9 @@ export function Faq() {
             </AccordionItem>
           ))}
         </Accordion>
+        </Reveal>
 
-      </div>
+      </div></div>
     </section>
   );
 }

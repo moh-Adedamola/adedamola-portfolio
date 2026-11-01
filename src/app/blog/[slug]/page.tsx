@@ -92,7 +92,7 @@ export default async function BlogPostPage({ params }: Props) {
   };
 
   return (
-    <article className="max-w-3xl mx-auto px-6 py-20">
+    <article className="mx-auto max-w-3xl px-5 py-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -112,13 +112,13 @@ export default async function BlogPostPage({ params }: Props) {
         {publishDate && (
           <p className="text-sm text-muted-foreground">{publishDate}</p>
         )}
-        <h1 className="text-3xl font-semibold leading-tight">{post.title}</h1>
+        <h1 className="font-display text-h2">{post.title}</h1>
         {post.excerpt && (
           <p className="text-muted-foreground">{post.excerpt}</p>
         )}
       </header>
 
-      <div className="prose prose-neutral dark:prose-invert max-w-none">
+      <div className="prose prose-neutral dark:prose-invert max-w-none prose-headings:font-display prose-headings:font-normal prose-headings:tracking-tight">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.body}</ReactMarkdown>
       </div>
     </article>

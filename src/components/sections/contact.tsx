@@ -2,6 +2,7 @@
 
 import { useTransition, useRef, useState } from "react";
 import { SectionHeading } from "@/components/section-heading";
+import { Reveal } from "@/components/reveal";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -32,7 +33,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="bg-section-base section-y">
-      <div className="mx-auto max-w-6xl px-4 md:px-6">
+      <div className="shell">
         <div className="grid gap-12 md:grid-cols-2 md:gap-20">
 
           {/* Left: intro + mailto fallback */}
@@ -55,10 +56,10 @@ export function Contact() {
           </div>
 
           {/* Right: form */}
-          <div>
+          <Reveal>
             {success ? (
-              <div className="rounded-lg border border-border bg-muted/40 px-6 py-10 text-center space-y-2">
-                <p className="font-display text-lg font-semibold text-foreground">
+              <div className="rounded-xl border border-border bg-muted/40 px-6 py-10 text-center space-y-2">
+                <p className="font-display text-h4 text-foreground">
                   Message sent.
                 </p>
                 <p className="text-sm text-muted-foreground">
@@ -151,7 +152,7 @@ export function Contact() {
                 </Button>
               </form>
             )}
-          </div>
+          </Reveal>
 
         </div>
       </div>

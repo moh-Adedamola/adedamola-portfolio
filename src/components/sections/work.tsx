@@ -1,5 +1,6 @@
 import { SectionHeading } from "@/components/section-heading";
 import { ProjectCard } from "@/components/project-card";
+import { RevealGroup, RevealItem } from "@/components/reveal";
 import { projects } from "@/data/projects";
 
 export function Work() {
@@ -9,7 +10,7 @@ export function Work() {
 
   return (
     <section id="work" className="bg-section-base section-y">
-      <div className="mx-auto max-w-6xl px-4 md:px-6">
+      <div className="shell">
 
         <SectionHeading
           eyebrow="Work"
@@ -19,11 +20,13 @@ export function Work() {
         />
 
         {/* Project grid */}
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+        <RevealGroup className="mt-12 grid gap-6 sm:grid-cols-2">
           {featured.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
+            <RevealItem key={project.slug} className="flex">
+              <ProjectCard project={project} />
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
 
       </div>
     </section>

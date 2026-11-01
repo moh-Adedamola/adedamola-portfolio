@@ -1,4 +1,5 @@
 import { SectionHeading } from "@/components/section-heading";
+import { RevealGroup, RevealItem } from "@/components/reveal";
 
 // Three honest differentiators — per feature-specs.md §4b and brand-context.md.
 // Copy here reflects what is genuinely known and defensible about this founder.
@@ -28,7 +29,7 @@ const DIFFERENTIATORS = [
 export function Why() {
   return (
     <section id="why" className="bg-section-raised section-y">
-      <div className="mx-auto max-w-6xl px-4 md:px-6">
+      <div className="shell">
 
         <SectionHeading
           eyebrow="Why work with me"
@@ -36,16 +37,16 @@ export function Why() {
           headingSize="xl"
         />
 
-        <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-3">
+        <RevealGroup className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-3">
           {DIFFERENTIATORS.map(({ label, heading, body }) => (
-            <div key={label} className="space-y-4">
+            <RevealItem key={label} className="space-y-4">
               {/* Label */}
-              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+              <p className="text-label font-medium uppercase text-muted-foreground">
                 {label}
               </p>
 
               {/* Quote-style heading */}
-              <h3 className="font-display text-xl font-semibold leading-snug text-foreground md:text-2xl">
+              <h3 className="font-display text-h3 text-foreground">
                 {heading}
               </h3>
 
@@ -53,12 +54,12 @@ export function Why() {
               <div className="h-px w-10 bg-border" />
 
               {/* Body */}
-              <p className="text-sm leading-relaxed text-muted-foreground">
+              <p className="text-base leading-relaxed text-muted-foreground">
                 {body}
               </p>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
 
       </div>
     </section>

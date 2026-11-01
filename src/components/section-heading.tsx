@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { RevealGroup, RevealItem } from "@/components/reveal";
 
 interface SectionHeadingProps {
   eyebrow: string;
@@ -6,7 +7,7 @@ interface SectionHeadingProps {
   intro?:  string;
   align?:  "left" | "center";
   className?: string;
-  /** "xl" gives Vysta-scale headings: larger size, bold weight, tighter tracking */
+  /** "xl" uses the section h2 scale; "default" steps down to the h3 scale */
   headingSize?: "default" | "xl";
 }
 
@@ -19,31 +20,33 @@ export function SectionHeading({
   headingSize = "default",
 }: SectionHeadingProps) {
   return (
-    <div className={cn(
-      headingSize === "xl" ? "space-y-4" : "space-y-3",
-      align === "center" && "text-center",
-      className,
-    )}>
-      <p className="text-xs font-medium uppercase tracking-wider text-eyebrow">
+    <RevealGroup className={cn(align === "center" && "text-center", className)}>
+      <RevealItem
+        as="p"
+        className={cn("eyebrow font-medium text-eyebrow", align === "center" && "justify-center")}
+      >
         {eyebrow}
-      </p>
-      <h2 className={cn(
-        "font-display text-foreground",
-        headingSize === "xl"
-          ? "text-4xl font-bold tracking-tighter md:text-5xl"
-          : "text-3xl font-semibold tracking-tight md:text-4xl",
-      )}>
+      </RevealItem>
+      <RevealItem
+        as="h2"
+        className={cn(
+          "font-display text-foreground",
+          headingSize === "xl" ? "text-h2" : "text-h3",
+        )}
+      >
         {title}
-      </h2>
+      </RevealItem>
       {intro && (
-        <p className={cn(
-          "text-muted-foreground",
-          headingSize === "xl" ? "text-lg" : "text-base",
-          align === "left" && "max-w-2xl",
-        )}>
+        <RevealItem
+          as="p"
+          className={cn(
+            "mt-6 text-body text-muted-foreground",
+            align === "left" && "max-w-2xl",
+          )}
+        >
           {intro}
-        </p>
+        </RevealItem>
       )}
-    </div>
+    </RevealGroup>
   );
 }

@@ -33,8 +33,8 @@ export default async function BlogPage() {
   const posts = await getPublishedPosts();
 
   return (
-    <section className="max-w-3xl mx-auto px-6 py-20">
-      <h1 className="text-3xl font-semibold mb-12">Blog</h1>
+    <section className="shell py-20"><div className="mx-auto max-w-3xl">
+      <h1 className="font-display text-h2 mb-12">Blog</h1>
 
       {posts.length === 0 ? (
         <p className="text-muted-foreground">No posts yet. Check back soon.</p>
@@ -62,7 +62,7 @@ export default async function BlogPage() {
                       })
                     : null}
                 </p>
-                <h2 className="text-xl font-semibold leading-snug">
+                <h2 className="font-display text-h4">
                   <Link href={`/blog/${post.slug}`} className="hover:underline">
                     {post.title}
                   </Link>
@@ -75,6 +75,6 @@ export default async function BlogPage() {
           ))}
         </ul>
       )}
-    </section>
+    </div></section>
   );
 }

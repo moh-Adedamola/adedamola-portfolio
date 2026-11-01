@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion, type Variants } from "motion/react";
 import { Button } from "@/components/ui/button";
+import { EASE_STANDARD } from "@/components/reveal";
 import { site } from "@/data/site";
 
 export function Hero() {
@@ -12,18 +13,18 @@ export function Hero() {
     visible: {
       transition: shouldReduceMotion
         ? { staggerChildren: 0 }
-        : { staggerChildren: 0.12, delayChildren: 0.05 },
+        : { staggerChildren: 0.1, delayChildren: 0.05 },
     },
   };
 
   const item: Variants = {
-    hidden: shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 },
+    hidden: shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 },
     visible: {
       opacity: 1,
       y: 0,
       transition: shouldReduceMotion
         ? { duration: 0 }
-        : { duration: 0.45, ease: [0.32, 0.72, 0, 1] },
+        : { duration: 0.9, ease: EASE_STANDARD },
     },
   };
 
@@ -32,9 +33,9 @@ export function Hero() {
       id="hero"
       className="relative flex min-h-[90vh] items-center bg-section-base"
     >
-      <div className="mx-auto w-full max-w-3xl px-4 py-24 text-center md:px-6 md:py-32">
+      <div className="shell py-24 text-center md:py-32">
         <motion.div
-          className="flex flex-col items-center gap-6"
+          className="mx-auto flex max-w-4xl flex-col items-center gap-6"
           initial="hidden"
           animate="visible"
           variants={container}
@@ -42,7 +43,7 @@ export function Hero() {
 
           {/* Eyebrow */}
           <motion.p
-            className="text-xs font-medium uppercase tracking-wider text-eyebrow"
+            className="eyebrow mb-0 justify-center font-medium text-eyebrow"
             variants={item}
           >
             {site.role}
@@ -50,7 +51,7 @@ export function Hero() {
 
           {/* Display headline */}
           <motion.h1
-            className="font-display text-5xl font-bold tracking-tighter text-foreground md:text-7xl"
+            className="font-display text-hero text-foreground"
             variants={item}
           >
             {site.name}
@@ -58,7 +59,7 @@ export function Hero() {
 
           {/* Positioning line */}
           <motion.p
-            className="max-w-xl text-lg leading-relaxed text-muted-foreground"
+            className="max-w-xl text-body text-muted-foreground"
             variants={item}
           >
             {site.tagline}
@@ -78,7 +79,7 @@ export function Hero() {
             >
               See my work
               <span
-                className="inline-block transition-transform duration-200 group-hover:translate-x-0.5"
+                className="inline-block transition-transform duration-200 ease-standard group-hover:translate-x-0.5"
                 aria-hidden="true"
               >
                 →
