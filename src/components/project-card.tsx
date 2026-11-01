@@ -18,13 +18,15 @@ interface ProjectCardProps {
   project: Project;
   /** 1-based position in the grid, shown as a mono "01" index */
   index: number;
+  /** Homepage preview: one sentence instead of the problem/approach/outcome story */
+  compact?: boolean;
 }
 
-export function ProjectCard({ project, index }: ProjectCardProps) {
-  const { name, client, summary, problem, approach, outcome,
+export function ProjectCard({ project, index, compact = false }: ProjectCardProps) {
+  const { name, relationship, summary, preview, problem, approach, outcome,
           tags, year, imageUrl, liveUrl, linkLabel } = project;
 
-  const hasStory = !isTodo(summary) && (problem || approach || outcome);
+  const hasStory = !compact && !isTodo(summary) && (problem || approach || outcome);
 
   return (
     <article className="group flex w-full flex-col rounded-xl border border-border bg-section-card shadow-card overflow-hidden transition-[border-color,box-shadow] duration-300 ease-standard hover:border-foreground/20 hover:shadow-lg">
@@ -54,7 +56,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         <div>
           <p className="flex items-baseline gap-3 text-xs text-muted-foreground">
             <span className="font-mono text-foreground">{String(index).padStart(2, "0")}</span>
-            <span>{client}{year ? ` · ${year}` : ""}</span>
+            <span>{relationship}{year ? ` · ${year}` : ""}</span>
           </p>
           <div className="mt-1 flex items-start justify-between gap-4">
             <h3 className="font-display text-h4 text-card-foreground">
@@ -72,7 +74,9 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
 
         {/* Summary / story */}
-        {hasStory ? (
+        {compact ? (
+          <p className="text-base leading-relaxed text-muted-foreground">{preview}</p>
+        ) : hasStory ? (
           <div className="space-y-2 text-base leading-relaxed text-muted-foreground">
             {problem   && <p>{problem}</p>}
             {approach  && <p>{approach}</p>}

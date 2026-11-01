@@ -18,7 +18,7 @@ export default function ServicesPage() {
       <PageHeader
         label="Services"
         title="What I build."
-        intro="The areas I work in. Every project starts with the real problem — not the nearest popular tool."
+        intro="The areas I work in. Every project starts with the real problem, not the nearest popular tool."
       />
       <SetupSession />
       <Consulting variant="full" />

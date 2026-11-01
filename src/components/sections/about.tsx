@@ -19,11 +19,9 @@ import { site } from "@/data/site";
 const HEADING = "A bit about me";
 
 const PARAGRAPHS: string[] = [
-  "I'm a software engineer. I studied computer science, then went back to learn software engineering properly, because understanding how something works and being able to build it well are two different things, and I wanted both.",
-  "These days I run a small agency called Refacint Technologies, where I build apps, AI agents, and automation for businesses. Most of my work starts the same way: I don't just start building. I map out the use cases, draw the UML diagrams and flowcharts, and figure out how things should work before I build so that everything actually holds up instead of breaking the moment someone uses the system differently than I expected.",
-  "A lot of my work now is AI and automation — handling the repetitive decisions and the manual steps nobody should still be doing by hand. The work I'm proudest of solves real problems, like a school exam system that runs offline, because you can't always count on the internet to hold.",
-  "Some of my work is for clients, some is my own — a school platform, an AI integrated product I'm co-founding, a marketplace that i am building from scratch. What ties it together is simple: I like building things people actually depend on.",
-];
+  "I'm a software engineer. I studied computer science, then went back to learn software engineering properly, because knowing how something works and being able to build it well are two different skills.",
+  "These days I run Refacint Technologies, a small studio where I build apps, AI assistants and automation for businesses. I plan before I build: the use cases, the diagrams, how it should behave when someone uses it in a way nobody expected. The work I'm proudest of is a school exam system that runs offline, because you can't count on the internet to hold.",
+]
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -68,8 +66,7 @@ export function About() {
             className="font-medium text-foreground underline underline-offset-4 transition-colors hover:text-primary"
           >
             Refacint Technologies
-          </a>
-          {" "}— custom systems and AI for businesses that want to move faster.
+          </a>, custom systems and AI for businesses that want to move faster.
         </p>
 
         <Reveal className="mt-12">

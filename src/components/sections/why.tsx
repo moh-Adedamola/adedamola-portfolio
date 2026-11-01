@@ -9,7 +9,7 @@ const DIFFERENTIATORS = [
   {
     label: "Market",
     heading: "I build for people like you.",
-    body: "I build for founders and small businesses who need software that just works — not enterprise tools bent to fit, not demos that fall apart in real use. I get the constraints, because I work in them.",
+    body: "I build for founders and small businesses who need software that just works, not enterprise tools bent to fit or demos that fall apart in real use. I get the constraints, because I work in them.",
   },
   {
     label: "Track record",
@@ -17,12 +17,12 @@ const DIFFERENTIATORS = [
     // Why: MOLEK Schools is a real paid client; EventIQ is also a paid client
     // build (in progress). Klassrun is the founder's own startup, not a client
     // engagement — the copy must keep that distinction honest.
-    body: "MOLEK Schools runs on a platform I built . EventIQ is another client build in progress: a vendor marketplace with escrow payments. Klassrun is my own — an AI school platform I'm co-founding. Real projects, real stakes.",
+    body: "Everything on this site is real: built for paying clients or for products I co-own, live or on the way. No mock-ups, no concept pieces.",
   },
   {
     label: "Approach",
     heading: "Built to last, not babysit.",
-    body: "I build things that keep working after I leave — tested properly, planned before they're coded, and designed so they don't fall over the first time someone uses them differently than expected.",
+    body: "I build things that keep working after I leave: tested properly, planned before they're coded, and designed so they don't fall over the first time someone uses them differently than expected.",
   },
 ] as const;
 

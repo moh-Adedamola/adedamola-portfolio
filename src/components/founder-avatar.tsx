@@ -10,7 +10,7 @@ interface FounderAvatarProps {
   alt?: string;
 }
 
-// founder-about.webp is 966×742 with the face near (520, 250). The image is
+// founder-about.webp is 966×742 with the face near (520, 265). The image is
 // over-scaled and offset inside a round mask so the face sits centred instead
 // of relying on object-position (which can't zoom).
 export function FounderAvatar({ size, className, eager, alt = "" }: FounderAvatarProps) {
@@ -26,10 +26,10 @@ export function FounderAvatar({ size, className, eager, alt = "" }: FounderAvata
         alt={alt}
         width={966}
         height={742}
-        sizes={`${Math.round(size * 2.2)}px`}
+        sizes={`${Math.round(size * 2.7)}px`}
         loading={eager ? "eager" : "lazy"}
         className="absolute max-w-none"
-        style={{ width: "220%", height: "auto", left: "-68%", top: "-3%" }}
+        style={{ width: "268%", height: "auto", left: "-94%", top: "-24%" }}
       />
     </span>
   );

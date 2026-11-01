@@ -38,7 +38,7 @@ export function Consulting({ variant = "compact" }: ConsultingProps) {
           <SectionHeading
             eyebrow="Services"
             title="What I build."
-            intro="The areas I work in. Every project starts with the real problem — not the nearest popular tool."
+            intro="The areas I work in. Every project starts with the real problem, not the nearest popular tool."
             headingSize="xl"
             className="mb-12"
           />
@@ -87,9 +87,7 @@ export function Consulting({ variant = "compact" }: ConsultingProps) {
                     <ul className="space-y-2">
                       {service.outcomes.map((outcome, j) => (
                         <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <span className="mt-0.5 shrink-0 text-muted-foreground" aria-hidden="true">
-                            —
-                          </span>
+                          <span className="mt-[0.7em] h-px w-3 shrink-0 bg-muted-foreground" aria-hidden="true" />
                           {outcome}
                         </li>
                       ))}
@@ -105,7 +103,7 @@ export function Consulting({ variant = "compact" }: ConsultingProps) {
           <div className="mt-10 border-t border-border pt-6">
             <Link
               href="/services"
-              className="group inline-flex items-center gap-1 rounded-sm text-sm font-medium text-foreground underline underline-offset-4 outline-none transition-colors hover:text-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="group inline-flex h-9 items-center gap-2 rounded-md border border-foreground/30 px-4 text-sm font-medium text-foreground outline-none transition-colors duration-200 ease-standard hover:border-foreground/60 hover:bg-foreground/[0.06] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               View all services
               <span

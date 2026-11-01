@@ -50,7 +50,7 @@ export function Work({ variant = "preview", limit = 3 }: WorkProps) {
                 isPreview && shown.length === 3 && i === 2 && "md:col-span-2 lg:col-span-1",
               )}
             >
-              <ProjectCard project={project} index={i + 1} />
+              <ProjectCard project={project} index={i + 1} compact={isPreview} />
             </RevealItem>
           ))}
         </RevealGroup>
@@ -59,7 +59,7 @@ export function Work({ variant = "preview", limit = 3 }: WorkProps) {
           <div className="mt-10 border-t border-border pt-6">
             <Link
               href="/projects"
-              className="group inline-flex items-center gap-1 rounded-sm text-sm font-medium text-foreground underline underline-offset-4 outline-none transition-colors hover:text-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="group inline-flex h-9 items-center gap-2 rounded-md border border-foreground/30 px-4 text-sm font-medium text-foreground outline-none transition-colors duration-200 ease-standard hover:border-foreground/60 hover:bg-foreground/[0.06] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               View all projects
               <span

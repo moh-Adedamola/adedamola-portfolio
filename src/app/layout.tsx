@@ -29,7 +29,7 @@ const chillax = localFont({
   display: "swap",
 });
 
-const defaultTitle = `${site.personName} — ${site.role}`;
+const defaultTitle = `${site.personName} · ${site.role}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

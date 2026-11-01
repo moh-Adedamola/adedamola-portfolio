@@ -16,8 +16,8 @@ export const services: readonly Service[] = [
     title:       "AI agents",
     description:
       "I build agents that handle specific, repeatable decisions in your " +
-      "business — lead qualification, document processing, notifications, " +
-      "scheduling — without a human needed for each one.",
+      "business, like lead qualification, document processing, notifications " +
+      "and scheduling, without a human needed for each one.",
     summary:     "Agents that handle repeatable decisions without a human needed for each one.",
     outcomes: [
       "Tasks that used to need a staff member run on their own",
@@ -46,7 +46,7 @@ export const services: readonly Service[] = [
     id:          "custom-software",
     title:       "Custom software",
     description:
-      "Software for the specific problem you have — not a general tool " +
+      "Software for the specific problem you have, not a general tool " +
       "stretched to cover it.",
     summary:     "Software for the specific problem you have.",
     outcomes: [
@@ -61,8 +61,8 @@ export const services: readonly Service[] = [
     id:          "content-automation",
     title:       "Content automation",
     description:
-      "Pipelines that generate, schedule, or repurpose content consistently " +
-      "— so you're not starting from scratch every time.",
+      "Pipelines that generate, schedule, or repurpose content consistently, " +
+      "so you're not starting from scratch every time.",
     summary:     "Pipelines that generate, schedule, or repurpose content consistently.",
     outcomes: [
       "Consistent output without adding headcount",

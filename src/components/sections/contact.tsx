@@ -168,7 +168,7 @@ export function ContactDetails() {
                   Message sent.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Thanks for reaching out — I&apos;ll reply soon.
+                  Thanks for reaching out. I&apos;ll reply soon.
                 </p>
                 <button
                   type="button"

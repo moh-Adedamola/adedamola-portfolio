@@ -46,7 +46,7 @@ export default async function Image({
       : null
     : site.role;
   const footer   = isPublished
-    ? `${site.personName} — ${site.role}`
+    ? `${site.personName} · ${site.role}`
     : clampWords(site.description, 90);
 
   // Shrink font for longer titles so they fit in one or two lines
