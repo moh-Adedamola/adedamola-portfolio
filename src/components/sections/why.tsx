@@ -28,7 +28,7 @@ const DIFFERENTIATORS = [
 
 export function Why() {
   return (
-    <section id="why" className="bg-section-raised section-y">
+    <section id="why" className="ground-stone bg-background section-y">
       <div className="shell">
 
         <SectionHeading

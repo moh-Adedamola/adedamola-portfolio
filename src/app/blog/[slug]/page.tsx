@@ -118,7 +118,7 @@ export default async function BlogPostPage({ params }: Props) {
         )}
       </header>
 
-      <div className="prose prose-neutral dark:prose-invert max-w-none prose-headings:font-display prose-headings:font-normal prose-headings:tracking-tight">
+      <div className="prose prose-neutral max-w-none prose-headings:font-display prose-headings:font-normal prose-headings:tracking-tight prose-a:text-primary">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.body}</ReactMarkdown>
       </div>
     </article>

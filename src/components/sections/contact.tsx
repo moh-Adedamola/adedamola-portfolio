@@ -1,8 +1,12 @@
 "use client";
 
 import { useTransition, useRef, useState } from "react";
-import { SectionHeading } from "@/components/section-heading";
-import { Reveal } from "@/components/reveal";
+import Link from "next/link";
+import { Mail, MapPin, Copy, Check } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
+import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
+import { cn } from "@/lib/utils";
+import { CONTACT_TITLE, CONTACT_INTRO } from "@/components/contact-copy";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -10,10 +14,50 @@ import { Button } from "@/components/ui/button";
 import { sendContactEmail } from "@/app/actions/contact";
 import { site } from "@/data/site";
 
-export function Contact() {
+const valueLinkClass =
+  "block break-words rounded-sm text-body text-foreground underline-offset-4 outline-none transition-colors hover:text-primary hover:underline focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+
+/** Homepage closing band (ink): headline + two CTAs. The full details and
+ *  form live on /contact. */
+export function ContactBand() {
+  return (
+    <section id="contact" className="ground-ink bg-background text-foreground section-y">
+      <RevealGroup className="shell">
+        <RevealItem as="p" className="eyebrow font-medium text-eyebrow">
+          Contact
+        </RevealItem>
+        <RevealItem as="h2" className="font-display text-display text-foreground">
+          {CONTACT_TITLE}
+        </RevealItem>
+        <RevealItem as="p" className="mt-8 max-w-2xl text-body text-muted-foreground">
+          {CONTACT_INTRO}
+        </RevealItem>
+        <RevealItem className="mt-8 flex flex-wrap items-center gap-3">
+          <Button asChild size="lg" className="group">
+            <a href={`mailto:${site.email}`}>
+              Say hello
+              <span className="transition-transform duration-200 ease-standard group-hover:translate-x-0.5" aria-hidden="true">→</span>
+            </a>
+          </Button>
+          <Link
+            href="/contact"
+            className="group inline-flex h-10 items-center gap-2 rounded-md border border-foreground/30 px-6 text-sm font-medium text-foreground outline-none transition-colors duration-200 ease-standard hover:border-foreground/60 hover:bg-foreground/[0.06] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            Get in touch
+            <span className="transition-transform duration-200 ease-standard group-hover:translate-x-0.5" aria-hidden="true">→</span>
+          </Link>
+        </RevealItem>
+      </RevealGroup>
+    </section>
+  );
+}
+
+/** /contact body (stone): email / WhatsApp / location columns + the form. */
+export function ContactDetails() {
   const [isPending, startTransition] = useTransition();
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [copied, setCopied] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -31,31 +75,92 @@ export function Contact() {
     });
   }
 
+  async function handleCopyEmail() {
+    try {
+      await navigator.clipboard.writeText(site.email);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.location.href = `mailto:${site.email}`;
+    }
+  }
+
+  const channels = [
+    {
+      label: "Email",
+      Icon:  Mail,
+      value: (
+        <a href={`mailto:${site.email}`} className={valueLinkClass}>
+          {site.email}
+        </a>
+      ),
+      sub: (
+        <button
+          type="button"
+          onClick={handleCopyEmail}
+          className="inline-flex items-center gap-1.5 rounded-sm text-sm text-muted-foreground underline-offset-4 outline-none transition-colors hover:text-foreground hover:underline focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        >
+          {copied ? <Check className="size-3.5" aria-hidden="true" /> : <Copy className="size-3.5" aria-hidden="true" />}
+          {copied ? "Copied" : "Copy email"}
+          <span className="sr-only" aria-live="polite">
+            {copied ? "Email address copied to clipboard" : ""}
+          </span>
+        </button>
+      ),
+    },
+    {
+      label: "WhatsApp",
+      Icon:  FaWhatsapp,
+      value: (
+        <a
+          href="https://wa.me/2349031204293"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={valueLinkClass}
+        >
+          +234 903 120 4293
+        </a>
+      ),
+      sub: <p className="text-sm text-muted-foreground">Fastest way to reach me</p>,
+    },
+    {
+      label: "Location",
+      Icon:  MapPin,
+      value: <p className="text-body text-foreground">Lagos, Nigeria</p>,
+      sub:   <p className="text-sm text-muted-foreground">Working with clients remotely</p>,
+    },
+  ];
+
   return (
-    <section id="contact" className="bg-section-base section-y">
+    <section id="contact-details" className="ground-stone bg-background section-y">
       <div className="shell">
-        <div className="grid gap-12 md:grid-cols-2 md:gap-20">
 
-          {/* Left: intro + mailto fallback */}
-          <div className="space-y-6">
-            <SectionHeading
-              eyebrow="Contact"
-              title="Let's work together."
-              intro="Got a problem worth solving? Tell me what you're dealing with and I'll tell you honestly whether I can help, and how I'd approach it."
-              headingSize="xl"
-            />
-            <p className="text-sm text-muted-foreground">
-              Prefer email?{" "}
-              <a
-                href={`mailto:${site.email}`}
-                className="text-foreground underline underline-offset-4 transition-colors hover:text-primary"
-              >
-                {site.email}
-              </a>
-            </p>
-          </div>
+        {/* Channels */}
+        <RevealGroup className="grid border-y border-border md:grid-cols-3">
+          {channels.map(({ label, Icon, value, sub }, i) => (
+            <RevealItem
+              key={label}
+              className={cn(
+                "flex gap-4 py-6 md:py-8",
+                i > 0 && "border-t border-border md:border-t-0 md:border-l md:pl-8",
+                i < channels.length - 1 && "md:pr-8",
+              )}
+            >
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-full border border-foreground/25 text-foreground" aria-hidden="true">
+                <Icon className="size-4" />
+              </span>
+              <div className="min-w-0 space-y-1">
+                <p className="text-label font-medium uppercase tracking-[0.12em] text-muted-foreground">{label}</p>
+                {value}
+                {sub}
+              </div>
+            </RevealItem>
+          ))}
+        </RevealGroup>
 
-          {/* Right: form */}
+        {/* Form */}
+        <div className="mt-16 max-w-2xl md:mt-20">
+
           <Reveal>
             {success ? (
               <div className="rounded-xl border border-border bg-muted/40 px-6 py-10 text-center space-y-2">

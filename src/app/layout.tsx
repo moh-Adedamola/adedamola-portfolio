@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Schibsted_Grotesk } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -52,6 +52,11 @@ export const metadata: Metadata = {
   },
 };
 
+// Light-only site: tell the browser not to apply a dark UA scheme
+export const viewport: Viewport = {
+  colorScheme: "light",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -61,7 +66,6 @@ export default function RootLayout({
     <ClerkProvider>
       <html
         lang="en"
-        suppressHydrationWarning
         className={`${schibstedGrotesk.variable} ${chillax.variable}`}
       >
         <body className="min-h-screen bg-background text-foreground font-sans antialiased">

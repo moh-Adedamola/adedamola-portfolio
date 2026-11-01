@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
 import { type Project, type ProjectTag } from "@/data/projects";
 
 const TAG_LABELS: Record<ProjectTag, string> = {
@@ -17,16 +16,18 @@ function isTodo(s: string) {
 
 interface ProjectCardProps {
   project: Project;
+  /** 1-based position in the grid, shown as a mono "01" index */
+  index: number;
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, index }: ProjectCardProps) {
   const { name, client, summary, problem, approach, outcome,
           tags, year, imageUrl, liveUrl, linkLabel } = project;
 
   const hasStory = !isTodo(summary) && (problem || approach || outcome);
 
   return (
-    <article className="group flex w-full flex-col rounded-xl border border-border bg-section-card shadow-sm overflow-hidden transition-[border-color,box-shadow] duration-300 ease-standard hover:border-foreground/20 hover:shadow-lg">
+    <article className="group flex w-full flex-col rounded-xl border border-border bg-section-card shadow-card overflow-hidden transition-[border-color,box-shadow] duration-300 ease-standard hover:border-foreground/20 hover:shadow-lg">
 
       {/* Image */}
       {imageUrl ? (
@@ -51,12 +52,23 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Header */}
         <div>
-          <p className="text-xs text-muted-foreground">
-            {client}{year ? ` · ${year}` : ""}
+          <p className="flex items-baseline gap-3 text-xs text-muted-foreground">
+            <span className="font-mono text-foreground">{String(index).padStart(2, "0")}</span>
+            <span>{client}{year ? ` · ${year}` : ""}</span>
           </p>
-          <h3 className="mt-1 font-display text-h4 text-card-foreground">
-            {name}
-          </h3>
+          <div className="mt-1 flex items-start justify-between gap-4">
+            <h3 className="font-display text-h4 text-card-foreground">
+              {name}
+            </h3>
+            {liveUrl && !isTodo(liveUrl) && (
+              <span
+                className="mt-1 text-sm text-muted-foreground transition-[color,transform] duration-200 ease-standard group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
+            )}
+          </div>
         </div>
 
         {/* Summary / story */}
@@ -75,18 +87,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <p className="text-base leading-relaxed text-muted-foreground">{summary}</p>
         )}
 
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mt-auto pt-2">
+        {/* Tags — mono chips */}
+        <ul className="mt-auto flex flex-wrap gap-1.5 pt-2" aria-label="Tags">
           {tags.map((tag) => (
-            <Badge
+            <li
               key={tag}
-              variant="secondary"
-              className="text-xs transition-transform duration-200 ease-standard hover:scale-105"
+              className="rounded-sm border border-foreground/15 px-2 py-0.5 font-mono text-xs leading-5 text-muted-foreground"
             >
               {TAG_LABELS[tag]}
-            </Badge>
+            </li>
           ))}
-        </div>
+        </ul>
 
         {/* Link */}
         {liveUrl && !isTodo(liveUrl) && (

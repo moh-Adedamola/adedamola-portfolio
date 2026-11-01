@@ -15,6 +15,7 @@ const TAGS = {
   ul:      motion.ul,
   li:      motion.li,
   p:       motion.p,
+  h1:      motion.h1,
   h2:      motion.h2,
 };
 

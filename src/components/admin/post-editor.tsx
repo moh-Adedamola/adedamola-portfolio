@@ -223,7 +223,7 @@ export function PostEditor({ initialData }: PostEditorProps) {
         </div>
 
         {preview ? (
-          <div className="prose prose-sm dark:prose-invert max-w-none border rounded-md p-4 min-h-64">
+          <div className="prose prose-sm max-w-none border rounded-md p-4 min-h-64">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{body}</ReactMarkdown>
           </div>
         ) : (

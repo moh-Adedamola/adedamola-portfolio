@@ -16,7 +16,7 @@ function isTodo(s: string) {
 
 export function Faq() {
   return (
-    <section id="faq" className="bg-section-raised section-y">
+    <section id="faq" className="ground-stone bg-background section-y">
       <div className="shell"><div className="mx-auto max-w-3xl">
 
         <SectionHeading eyebrow="FAQ" title="Common questions." headingSize="xl" />

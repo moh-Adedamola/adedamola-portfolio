@@ -2,20 +2,25 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { FaLinkedin, FaXTwitter, FaGithub } from "react-icons/fa6";
 import { Dialog as DialogPrimitive } from "radix-ui";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/layout/theme-toggle";
+import { FounderAvatar } from "@/components/founder-avatar";
 
 const navLinks = [
-  { label: "Projects", href: "#work"       },
-  { label: "Services", href: "#consulting" },
-  { label: "Blog",     href: "#writing"    },
-  { label: "Contact",  href: "#contact"    },
+  { label: "Projects", href: "/projects" },
+  { label: "Services", href: "/services" },
+  { label: "Blog",     href: "/blog"     },
+  { label: "Contact",  href: "/contact"  },
 ];
+
+function isActivePath(pathname: string, href: string) {
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 const socialLinks = [
   { label: "LinkedIn",      href: "https://www.linkedin.com/in/mohammed-adegbite-2a6990301/", Icon: FaLinkedin },
@@ -26,6 +31,7 @@ const socialLinks = [
 export function SiteHeader() {
   const [scrolled, setScrolled]     = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -51,7 +57,7 @@ export function SiteHeader() {
   // Clicking the logo while already on "/" doesn't trigger Next.js's
   // scroll-to-top (no navigation occurs), so do it explicitly.
   function handleLogoClick() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (pathname === "/") window.scrollTo({ top: 0, behavior: "smooth" });
     setMobileOpen(false);
   }
 
@@ -73,46 +79,69 @@ export function SiteHeader() {
         // open to block interaction with the rest of the page. The header
         // lives outside the Dialog's portal, so it inherits that `none` and
         // becomes visible-but-unclickable unless explicitly re-enabled here.
-        "pointer-events-auto fixed top-0 left-0 right-0 z-50 w-full transition-[background-color,backdrop-filter,border-color,box-shadow] duration-500",
+        "ground-ink pointer-events-auto fixed top-0 left-0 right-0 z-50 w-full bg-background/95 text-foreground backdrop-blur-xl transition-[background-color,backdrop-filter,border-color,box-shadow] duration-500",
         scrolled
-          ? "border-b border-border bg-background/80 shadow-sm backdrop-blur-xl"
-          : "bg-transparent",
+          ? "border-b border-border shadow-sm"
+          : "border-b border-transparent",
       )}
     >
-      <div className="shell flex h-16 items-center justify-between">
+      <div className="shell flex h-16 items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr]">
 
         <Link
           href="/"
           onClick={handleLogoClick}
-          className="rounded-sm font-display font-medium text-foreground transition-opacity outline-none hover:opacity-80 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          aria-label="MOH, back to top"
+          className="group inline-flex items-center gap-2.5 justify-self-start rounded-full pr-2 text-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
-          MOH
+          <FounderAvatar size={32} eager className="size-8 ring-1 ring-border" />
+          <span className="text-label font-medium uppercase tracking-[0.12em] transition-opacity group-hover:opacity-80">
+            MOH
+          </span>
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+        {/* Desktop nav — floating pill */}
+        <nav
+          className="hidden items-center gap-0.5 rounded-full border border-border bg-foreground/[0.04] p-1 md:flex"
+          aria-label="Main navigation"
+        >
+          {navLinks.map((link) => {
+            const isActive = isActivePath(pathname, link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? "page" : undefined}
+                className={cn(
+                  "rounded-full px-4 py-1.5 text-label font-medium uppercase tracking-[0.12em] outline-none transition-colors duration-200 ease-standard focus-visible:ring-2 focus-visible:ring-ring",
+                  isActive
+                    ? "bg-foreground/10 text-foreground"
+                    : "text-muted-foreground hover:bg-foreground/[0.07] hover:text-foreground",
+                )}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Desktop right */}
-        <div className="hidden md:flex items-center gap-2">
-          <ThemeToggle />
-          <Button asChild size="sm">
-            <a href="#contact">Work with me</a>
-          </Button>
+        <div className="hidden justify-self-end md:flex">
+          <Link
+            href="/contact"
+            className="group inline-flex h-9 items-center gap-1.5 rounded-md border border-foreground/25 px-3.5 text-label font-medium uppercase tracking-[0.12em] text-foreground outline-none transition-colors duration-200 ease-standard hover:border-foreground/50 hover:bg-foreground/[0.06] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            Work with me
+            <span
+              className="inline-block transition-transform duration-200 ease-standard group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
+          </Link>
         </div>
 
         {/* Mobile right */}
         <div className="flex items-center gap-1 md:hidden">
-          <ThemeToggle />
           <DialogPrimitive.Root open={mobileOpen} onOpenChange={setMobileOpen}>
             <DialogPrimitive.Trigger asChild>
               <Button
@@ -146,7 +175,7 @@ export function SiteHeader() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
                       transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.3 }}
-                      className="fixed inset-0 z-40 overflow-y-auto bg-background pt-16 outline-none"
+                      className="ground-ink fixed inset-0 z-40 overflow-y-auto bg-background pt-16 text-foreground outline-none"
                     >
                       <DialogPrimitive.Title className="sr-only">
                         Navigation menu
@@ -156,28 +185,29 @@ export function SiteHeader() {
 
                         <nav className="flex flex-col" aria-label="Mobile navigation">
                           {navLinks.map((link) => (
-                            <a
+                            <Link
                               key={link.href}
                               href={link.href}
                               onClick={handleNavClick}
-                              className="group flex items-center justify-between border-b border-border py-4 font-display text-h4 text-foreground outline-none transition-colors duration-300 ease-standard hover:bg-foreground/[0.02] hover:text-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                              aria-current={isActivePath(pathname, link.href) ? "page" : undefined}
+                              className="group flex items-center justify-between border-b border-border py-4 font-display text-h4 text-foreground outline-none transition-colors duration-300 ease-standard aria-[current=page]:text-primary hover:bg-foreground/[0.02] hover:text-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                             >
                               {link.label}
                               <ArrowRight
                                 className="size-5 shrink-0 text-muted-foreground transition-transform duration-200 ease-standard group-hover:translate-x-0.5 group-hover:text-primary"
                                 aria-hidden="true"
                               />
-                            </a>
+                            </Link>
                           ))}
                         </nav>
 
-                        <a
-                          href="#contact"
+                        <Link
+                          href="/contact"
                           onClick={handleNavClick}
                           className="mt-6 block rounded-md bg-primary px-6 py-4 text-center font-semibold text-primary-foreground outline-none transition-colors hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                         >
                           Work with me
-                        </a>
+                        </Link>
 
                         <div className="mt-10 flex flex-col gap-3 border-t border-border pt-6">
                           <a

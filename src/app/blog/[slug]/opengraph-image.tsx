@@ -7,10 +7,10 @@ export const alt         = `Blog · ${site.personName}`;
 export const size        = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const BG     = "#120e0a";
-const FG     = "#f0e8da";
-const ACCENT = "#1db5a0";
-const MUTED  = "#998b7d";
+const BG     = "#141A24";
+const FG     = "#F4F2ED";
+const ACCENT = "#C2A878";
+const MUTED  = "#9A948A";
 
 function clampWords(str: string, max: number): string {
   if (str.length <= max) return str;

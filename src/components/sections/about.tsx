@@ -31,7 +31,7 @@ export function About() {
   const isTodo = (s: string) => s.startsWith("TODO");
 
   return (
-    <section id="about" className="bg-section-raised section-y">
+    <section id="about" className="ground-stone bg-background section-y">
       <div className="shell"><div className="mx-auto max-w-3xl">
 
         <SectionHeading

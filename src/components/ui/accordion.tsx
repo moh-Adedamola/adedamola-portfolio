@@ -20,7 +20,7 @@ function AccordionItem({
     <AccordionPrimitive.Item
       data-slot="accordion-item"
       className={cn(
-        "mb-4 overflow-hidden rounded-xl border border-border bg-section-card shadow-sm last:mb-0",
+        "mb-4 overflow-hidden rounded-xl border border-border bg-section-card shadow-card last:mb-0",
         className
       )}
       {...props}
@@ -46,7 +46,7 @@ function AccordionTrigger({
         {children}
         <span
           aria-hidden="true"
-          className="flex size-8 shrink-0 items-center justify-center rounded-full border border-primary/40 text-primary transition-transform duration-200"
+          className="flex size-8 shrink-0 items-center justify-center rounded-full border border-border text-foreground transition-transform duration-200"
         >
           <PlusIcon className="pointer-events-none size-4" />
         </span>

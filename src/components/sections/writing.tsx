@@ -31,7 +31,7 @@ export async function Writing() {
   if (posts.length === 0) return null;
 
   return (
-    <section id="writing" className="bg-section-base section-y">
+    <section id="writing" className="ground-stone bg-background section-y">
       <div className="shell">
 
         <SectionHeading eyebrow="Writing" title="Thoughts on building." headingSize="xl" />
@@ -41,10 +41,10 @@ export async function Writing() {
             <RevealItem as="li" key={post.slug}>
               <Link
                 href={`/blog/${post.slug}`}
-                className="group flex flex-col space-y-3 rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-section-card shadow-card outline-none transition-[border-color,box-shadow] duration-300 ease-standard hover:border-foreground/20 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 {post.coverImage && (
-                  <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+                  <div className="relative aspect-video w-full overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={post.coverImage}
@@ -54,7 +54,7 @@ export async function Writing() {
                     />
                   </div>
                 )}
-                <div className="space-y-1">
+                <div className="space-y-1 p-6">
                   {post.publishedAt && (
                     <p className="text-xs text-muted-foreground">
                       {new Date(post.publishedAt).toLocaleDateString("en-GB", {

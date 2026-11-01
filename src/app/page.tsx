@@ -8,7 +8,7 @@ import { Consulting } from "@/components/sections/consulting";
 import { Stack } from "@/components/sections/stack";
 import { Writing } from "@/components/sections/writing";
 import { Faq } from "@/components/sections/faq";
-import { Contact } from "@/components/sections/contact";
+import { ContactBand } from "@/components/sections/contact";
 import { site, siteUrl } from "@/data/site";
 
 export const revalidate = 60;
@@ -49,13 +49,13 @@ export default function Home() {
       <Hero />
       <CapabilityMarquee />
       <About />
-      <Work />
+      <Work variant="preview" limit={3} />
       <Why />
-      <Consulting />
+      <Consulting variant="compact" />
       <Stack />
       <Writing />
       <Faq />
-      <Contact />
+      <ContactBand />
     </>
   );
 }

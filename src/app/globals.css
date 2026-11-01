@@ -1,110 +1,114 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* next-themes adds .dark to <html> — redefine Tailwind's dark: variant to match */
-@custom-variant dark (&:where(.dark, .dark *));
+/* ── Ink & Sand palette — raw HSL channels (no hsl() wrapper, enables opacity variants)
+   One accent (sand/brass), rationed: primary CTA, links, section-label lines.
+   Accent TEXT on stone uses darker brass (#7E6136, 5.1:1); bright sand is for
+   ink grounds (#C2A878, 7.6:1). All text pairs clear WCAG AA 4.5:1.           */
 
-/* ── Light mode — raw HSL channels (no hsl() wrapper, enables opacity variants) */
+/* Light-only site — stone ground. color-scheme keeps native UI (form controls,
+   scrollbars) light even when the OS prefers dark. */
 :root {
+  color-scheme: light;
+
   /* Page & surface */
-  --background:              36 50% 96%;
-  --foreground:              26 27% 10%;
-  --card:                    35 42% 93%;
-  --card-foreground:         26 27% 10%;
-  --surface-elevated:        34 35% 91%;
-  --muted:                   33 28% 90%;
-  --muted-foreground:        29 10% 37%;
+  --background:              43 24.1% 94.3%;   /* #F4F2ED stone           */
+  --foreground:              222 24.6% 13.5%;  /* #1A1F2B ink             */
+  --card:                    45 33.3% 97.6%;   /* #FBFAF7                 */
+  --card-foreground:         222 24.6% 13.5%;
+  --muted:                   42 20.8% 90.6%;   /* #ECE9E2 quiet fill      */
+  --muted-foreground:        41 9.7% 38.2%;    /* #6B6558 — 5.2:1 on stone */
 
   /* Overlays (popovers, dropdowns, tooltips) */
-  --popover:                 36 50% 96%;
-  --popover-foreground:      26 27% 10%;
+  --popover:                 45 33.3% 97.6%;
+  --popover-foreground:      222 24.6% 13.5%;
 
   /* Actions */
-  --primary:                 173 78% 35%;
-  --primary-foreground:      174 83% 7%;
-  --secondary:               33 22% 88%;
-  --secondary-foreground:    26 27% 10%;
-  --accent:                  33 25% 87%;
-  --accent-foreground:       26 27% 10%;
-  --destructive:             0 75% 50%;
+  --primary:                 36 40% 35.3%;     /* #7E6136 brass — CTA fill, accent text */
+  --primary-foreground:      45 33.3% 97.6%;   /* 5.5:1 on brass          */
+  --secondary:               42 20.8% 90.6%;
+  --secondary-foreground:    222 24.6% 13.5%;
+  --accent:                  40 21.4% 89%;     /* #E9E5DD neutral hover surface (not the brand accent) */
+  --accent-foreground:       222 24.6% 13.5%;
+  --destructive:             4 76.5% 40%;      /* #B42318 — 5.9:1 on stone */
   --destructive-foreground:  0 0% 100%;
-  --success:                 152 60% 38%;
+  --success:                 150 59.5% 30%;
 
-  /* Small accent text (eyebrow labels, "View live" links) — a darker teal than
-     --primary specifically so it passes WCAG AA (4.5:1) as small text on the
-     lightest/darkest section backgrounds. Kept separate from --primary so the
-     teal BUTTON background/text contrast (already passing) isn't touched. */
-  --eyebrow:                 173 78% 25%;
+  /* Accent text (eyebrow labels, "View live" links) */
+  --eyebrow:                 36 40% 35.3%;     /* brass #7E6136           */
+
+  /* Decorative sand — section-label hairlines only, never text */
+  --sand:                    37 36% 56.5%;     /* #B89968                 */
 
   /* Structure */
-  --brand-espresso:          26 27% 10%;
-  --border:                  30 15% 83%;
-  --input:                   30 12% 81%;
-  --ring:                    173 78% 35%;
+  --border:                  42 14.7% 86.7%;   /* #E2DFD8 hairline        */
+  --input:                   39 8% 51%;        /* #8C8578 — 3.3:1 field edge */
+  --ring:                    36 40% 35.3%;     /* brass focus ring — 5.1:1 */
 
-  /* Section background tokens — own values, not aliased, for a clearly visible alternation */
-  --section-base:   var(--background);  /* flush with page bg: hsl(36 50% 96%)            */
-  --section-raised: 35 34% 88%;         /* 8 pt lightness step below base — warm-but-grey  */
+  /* Card surface — sits just above the stone ground */
+  --section-card:            45 33.3% 97.6%;   /* #FBFAF7                 */
 
-  /* Elevated card surface — guaranteed above BOTH section backgrounds in both themes */
-  --section-card:   35 40% 98%;         /* L=98%: 2pt above base, 10pt above raised        */
+  /* Two-tone stone — adjacent light sections alternate A / B (see .ground-stone) */
+  --stone-a:                 43 24.1% 94.3%;   /* #F4F2ED                 */
+  --stone-b:                 47 22% 92%;       /* #EFEDE6 — a touch deeper */
 }
 
-/* ── Dark mode */
-.dark {
+/* Ink tokens — `.ground-ink` sections (hero, marquee, services, contact,
+   header, mobile menu, footer). Pair the class with
+   `bg-background text-foreground`.                                          */
+.ground-ink {
   /* Page & surface */
-  --background:              32 42% 6%;
-  --foreground:              35 41% 92%;
-  --card:                    30 33% 11%;
-  --card-foreground:         35 41% 92%;
-  --surface-elevated:        30 26% 15%;
-  --muted:                   30 22% 13%;
-  --muted-foreground:        32 14% 61%;
+  --background:              218 28.6% 11%;    /* #141A24 ink ground      */
+  --foreground:              43 24.1% 94.3%;   /* #F4F2ED off-white       */
+  --card:                    220 27.3% 15.1%;  /* #1C2331                 */
+  --card-foreground:         43 24.1% 94.3%;
+  --muted:                   220 27.3% 17.3%;  /* #202838                 */
+  --muted-foreground:        38 7.3% 57.3%;    /* #9A948A — 5.8:1 on ink  */
 
   /* Overlays */
-  --popover:                 30 33% 11%;
-  --popover-foreground:      35 41% 92%;
+  --popover:                 220 27.3% 15.1%;
+  --popover-foreground:      43 24.1% 94.3%;
 
   /* Actions */
-  --primary:                 173 70% 41%;
-  --primary-foreground:      174 83% 7%;
-  --secondary:               30 24% 16%;
-  --secondary-foreground:    35 41% 92%;
-  --accent:                  30 26% 18%;
-  --accent-foreground:       35 41% 92%;
-  --destructive:             0 70% 55%;
-  --destructive-foreground:  0 0% 100%;
-  --success:                 152 55% 50%;
+  --primary:                 39 37.8% 61.6%;   /* #C2A878 bright sand     */
+  --primary-foreground:      218 28.6% 11%;    /* ink on sand — 7.6:1     */
+  --secondary:               220 27.3% 17.3%;
+  --secondary-foreground:    43 24.1% 94.3%;
+  --accent:                  220 27.3% 17.3%;
+  --accent-foreground:       43 24.1% 94.3%;
+  --destructive:             4 92.5% 68.8%;    /* #F97066 — 6.3:1 on ink  */
+  --destructive-foreground:  218 28.6% 11%;
+  --success:                 151 49.8% 53.1%;
 
-  /* Small accent text — slightly lighter than --primary so it still clears
-     4.5:1 against the lightest dark-mode surface (--section-card), which the
-     "View live" links sit on. */
-  --eyebrow:                 173 70% 44%;
+  --eyebrow:                 39 37.8% 61.6%;   /* sand #C2A878 — 7.6:1    */
+  --sand:                    39 37.8% 61.6%;
 
-  /* Structure */
-  --brand-espresso:          26 27% 10%;
-  --border:                  30 20% 20%;
-  --input:                   30 17% 22%;
-  --ring:                    173 70% 41%;
+  /* Structure — off-white at low opacity */
+  --border:                  43 24.1% 94.3% / 0.12;
+  --input:                   43 24.1% 94.3% / 0.4;   /* 3.5:1 field edge */
+  --ring:                    39 37.8% 61.6%;
 
-  /* Section background token — 11 pt lightness step above dark base hsl(32 42% 6%) */
-  --section-raised:          30 24% 17%;
-
-  /* Elevated card surface — L=22%: 16pt above base, 5pt above raised */
-  --section-card:            30 26% 22%;
+  --section-card:            220 27.3% 15.1%;  /* #1C2331                 */
 }
+
+/* Light-ground sections. Runs of adjacent stone sections alternate tone A/B
+   via sibling chains, so the rhythm holds even when a section (e.g. Writing
+   with no posts) isn't rendered. */
+.ground-stone                                                   { --background: var(--stone-a); }
+.ground-stone + .ground-stone                                   { --background: var(--stone-b); }
+.ground-stone + .ground-stone + .ground-stone                   { --background: var(--stone-a); }
+.ground-stone + .ground-stone + .ground-stone + .ground-stone   { --background: var(--stone-b); }
 
 /* ── Tailwind v4 design tokens
    @theme inline: emit var() references in utilities, not static values —
-   required so dark/light switching works at runtime.                      */
+   required so .ground-ink / .ground-stone can re-scope tokens per section.  */
 @theme inline {
   /* Page & surface */
   --color-background:              hsl(var(--background));
   --color-foreground:              hsl(var(--foreground));
   --color-card:                    hsl(var(--card));
   --color-card-foreground:         hsl(var(--card-foreground));
-  --color-surface-elevated:        hsl(var(--surface-elevated));
-  --color-muted:                   hsl(var(--muted));
+  --color-muted:                  hsl(var(--muted));
   --color-muted-foreground:        hsl(var(--muted-foreground));
 
   /* Overlays */
@@ -122,16 +126,14 @@
   --color-destructive-foreground:  hsl(var(--destructive-foreground));
   --color-success:                 hsl(var(--success));
   --color-eyebrow:                 hsl(var(--eyebrow));
+  --color-sand:                    hsl(var(--sand));
 
   /* Structure */
-  --color-brand-espresso:          hsl(var(--brand-espresso));
-  --color-border:                  hsl(var(--border));
+  --color-border:                 hsl(var(--border));
   --color-input:                   hsl(var(--input));
   --color-ring:                    hsl(var(--ring));
 
-  /* Section surface utilities — bg-section-base / bg-section-raised / bg-section-card */
-  --color-section-base:            hsl(var(--section-base));
-  --color-section-raised:          hsl(var(--section-raised));
+  /* Card surface utility — bg-section-card (resolves per ground) */
   --color-section-card:            hsl(var(--section-card));
 
   /* Border radius — sharp system. Avatars / icon buttons use rounded-full. */
@@ -154,6 +156,12 @@
   --text-hero--letter-spacing:  -0.05em;
   --text-hero--font-weight:     300;
 
+  /* Page headers + contact headline — a step below the hero */
+  --text-display:                 clamp(3rem, 9vw, 9rem);
+  --text-display--line-height:    0.9;
+  --text-display--letter-spacing: -0.045em;
+  --text-display--font-weight:    300;
+
   --text-h2:                    clamp(2.25rem, 5vw, 4.5rem);
   --text-h2--line-height:       1.05;
   --text-h2--letter-spacing:    -0.02em;
@@ -172,6 +180,9 @@
   --text-label:                 12px;
   --text-label--line-height:    1.3;
   --text-label--letter-spacing: 0.5px;
+
+  /* Card lift — soft, ink-tinted, barely there → shadow-card */
+  --shadow-card: 0 1px 2px 0 rgb(26 31 43 / 0.04), 0 2px 6px -1px rgb(26 31 43 / 0.06);
 
   /* Single easing curve for all motion → ease-standard */
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
@@ -207,30 +218,30 @@
   }
 }
 
-/* ── Section label — small uppercase text preceded by a 32px hairline */
+/* ── Section label — small mono uppercase label, no leading rule.
+   Pair with text-eyebrow: brass on stone (5.1:1), sand on ink (7.6:1). */
 @utility eyebrow {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   margin-bottom: 1.5rem;
+  font-family: var(--font-mono);
   font-size: 12px;
   line-height: 1.3;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  &::before {
-    content: "";
-    display: block;
-    width: 2rem;
-    height: 1px;
-    flex-shrink: 0;
-    background-color: currentColor;
-  }
 }
 
 /* ── Entrance animation keyframes */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Typing caret blink (hero "Currently" line) */
+@keyframes caret {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
 }
 
 @keyframes marquee {
@@ -272,10 +283,6 @@ body {
     font-weight: 400;
   }
 }
-
-/* ── Tech-icon brand colors — vars set on the span itself, no inheritance hop */
-.icon-col         { color: var(--icon-color); }
-.dark .icon-col   { color: var(--icon-color-d); }
 
 /* ── Vysta foundations — section spacing
    Single source of truth for section vertical padding.

@@ -6,10 +6,10 @@ export const size        = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 // Design tokens (approximating site dark-mode CSS vars)
-const BG     = "#120e0a"; // --background dark
-const FG     = "#f0e8da"; // --foreground dark
-const ACCENT = "#1db5a0"; // --primary dark
-const MUTED  = "#998b7d"; // --muted-foreground dark
+const BG     = "#141A24"; // ink ground
+const FG     = "#F4F2ED"; // off-white text
+const ACCENT = "#C2A878"; // sand accent (on ink)
+const MUTED  = "#9A948A"; // muted text (on ink)
 
 function clampWords(str: string, max: number): string {
   if (str.length <= max) return str;

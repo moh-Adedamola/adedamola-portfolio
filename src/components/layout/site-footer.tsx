@@ -1,12 +1,13 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { FaLinkedin, FaXTwitter, FaGithub } from "react-icons/fa6";
 import { Separator } from "@/components/ui/separator";
 
 const navLinks = [
-  { label: "Projects", href: "#work"       },
-  { label: "Services", href: "#consulting" },
-  { label: "Blog",     href: "#writing"    },
-  { label: "Contact",  href: "#contact"    },
+  { label: "Projects", href: "/projects" },
+  { label: "Services", href: "/services" },
+  { label: "Blog",     href: "/blog"     },
+  { label: "Contact",  href: "/contact"  },
 ];
 
 const socialLinks = [
@@ -19,7 +20,7 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-background">
+    <footer className="ground-ink bg-background text-foreground border-t border-border">
       <div className="shell py-12 md:py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
 
@@ -36,7 +37,7 @@ export function SiteFooter() {
               >
                 Refacint Technologies
               </a>
-              , a  software and AI agency.
+              , a software and AI agency.
             </p>
           </div>
 
@@ -48,7 +49,7 @@ export function SiteFooter() {
             <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="group inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
@@ -57,7 +58,7 @@ export function SiteFooter() {
                       className="size-3.5 -translate-x-1 opacity-0 transition-all duration-200 ease-standard group-hover:translate-x-0 group-hover:opacity-100"
                       aria-hidden="true"
                     />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

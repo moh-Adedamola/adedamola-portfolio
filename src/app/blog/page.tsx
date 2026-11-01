@@ -1,13 +1,14 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { db } from "@/lib/db";
-import { site } from "@/data/site";
+import { site, siteUrl } from "@/data/site";
 
 export const revalidate = 60;
 
 export const metadata: Metadata = {
   title:       "Blog",
   description: `Writing on software, AI, and automation from ${site.personName}.`,
+  alternates:  { canonical: `${siteUrl}/blog` },
 };
 
 async function getPublishedPosts() {

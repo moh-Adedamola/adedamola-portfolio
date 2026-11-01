@@ -2,6 +2,7 @@ export interface Service {
   id:           string;
   title:        string;
   description:  string;    // Founder voice — what it is, plain
+  summary:      string;    // One line for the compact homepage card
   outcomes:     string[];  // 2-3 concrete real benefits; no invented metrics
   icon?:        string;    // lucide icon name
   displayOrder: number;
@@ -17,6 +18,7 @@ export const services: readonly Service[] = [
       "I build agents that handle specific, repeatable decisions in your " +
       "business — lead qualification, document processing, notifications, " +
       "scheduling — without a human needed for each one.",
+    summary:     "Agents that handle repeatable decisions without a human needed for each one.",
     outcomes: [
       "Tasks that used to need a staff member run on their own",
       "Available around the clock without overtime or additional hires",
@@ -31,6 +33,7 @@ export const services: readonly Service[] = [
     description:
       "A CRM built around your actual sales process, not a generic one " +
       "you have to adapt yourself to fit.",
+    summary:     "A CRM built around your actual sales process.",
     outcomes: [
       "Pipeline visibility that matches how you actually sell",
       "Client and lead data in one place instead of scattered across sheets",
@@ -45,6 +48,7 @@ export const services: readonly Service[] = [
     description:
       "Software for the specific problem you have — not a general tool " +
       "stretched to cover it.",
+    summary:     "Software for the specific problem you have.",
     outcomes: [
       "Built around your real process, not adapted from something generic",
       "No unnecessary features to work around",
@@ -59,6 +63,7 @@ export const services: readonly Service[] = [
     description:
       "Pipelines that generate, schedule, or repurpose content consistently " +
       "— so you're not starting from scratch every time.",
+    summary:     "Pipelines that generate, schedule, or repurpose content consistently.",
     outcomes: [
       "Consistent output without adding headcount",
       "One piece of content turns into several formats automatically",
@@ -73,6 +78,7 @@ export const services: readonly Service[] = [
     description:
       "I help you work out what AI can realistically do for your business " +
       "and where to start.",
+    summary:     "What AI can realistically do for your business, and where to start.",
     outcomes: [
       "Clear picture of what's worth building vs. what's hype",
       "A starting point that fits your budget and team",
