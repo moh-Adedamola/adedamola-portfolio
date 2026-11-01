@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { db } from "@/lib/db";
+import { cloudinaryUrl } from "@/lib/cloudinary";
 import { site, siteUrl } from "@/data/site";
 
 export const revalidate = 60;
@@ -47,7 +48,7 @@ export default async function BlogPage() {
                 <div className="relative aspect-video w-full overflow-hidden rounded-lg mb-4">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={post.coverImage}
+                    src={cloudinaryUrl(post.coverImage, 800)}
                     alt={post.title}
                     className="h-full w-full object-cover"
                   />

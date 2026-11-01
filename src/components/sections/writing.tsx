@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SectionHeading } from "@/components/section-heading";
 import { RevealGroup, RevealItem } from "@/components/reveal";
 import { db } from "@/lib/db";
+import { cloudinaryUrl } from "@/lib/cloudinary";
 
 async function getRecentPosts() {
   try {
@@ -47,7 +48,7 @@ export async function Writing() {
                   <div className="relative aspect-video w-full overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={post.coverImage}
+                      src={cloudinaryUrl(post.coverImage, 800)}
                       alt={post.title}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-700 ease-standard group-hover:scale-105"

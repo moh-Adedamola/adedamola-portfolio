@@ -5,6 +5,7 @@ import { About } from "@/components/sections/about";
 import { Work } from "@/components/sections/work";
 import { Why } from "@/components/sections/why";
 import { Consulting } from "@/components/sections/consulting";
+import { SetupSession } from "@/components/sections/setup-session";
 import { Stack } from "@/components/sections/stack";
 import { Writing } from "@/components/sections/writing";
 import { Faq } from "@/components/sections/faq";
@@ -52,6 +53,7 @@ export default function Home() {
       <Work variant="preview" limit={3} />
       <Why />
       <Consulting variant="compact" />
+      <SetupSession />
       <Stack />
       <Writing />
       <Faq />

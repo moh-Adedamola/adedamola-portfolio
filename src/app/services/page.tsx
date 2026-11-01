@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/page-header";
 import { Consulting } from "@/components/sections/consulting";
+import { SetupSession } from "@/components/sections/setup-session";
 import { Why } from "@/components/sections/why";
 import { Faq } from "@/components/sections/faq";
 import { siteUrl } from "@/data/site";
@@ -19,6 +20,7 @@ export default function ServicesPage() {
         title="What I build."
         intro="The areas I work in. Every project starts with the real problem — not the nearest popular tool."
       />
+      <SetupSession />
       <Consulting variant="full" />
       <Why />
       <Faq />

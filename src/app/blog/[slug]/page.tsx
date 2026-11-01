@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { db } from "@/lib/db";
+import { cloudinaryUrl } from "@/lib/cloudinary";
 import { site, siteUrl } from "@/data/site";
 
 export const revalidate = 60;
@@ -75,7 +76,7 @@ export default async function BlogPostPage({ params }: Props) {
     ...(post.excerpt   ? { "description": post.excerpt } : {}),
     "datePublished":   post.publishedAt?.toISOString(),
     "dateModified":    post.updatedAt.toISOString(),
-    "image":           post.coverImage ?? `${postUrl}/opengraph-image`,
+    "image":           post.coverImage ? cloudinaryUrl(post.coverImage, 1600) : `${postUrl}/opengraph-image`,
     "mainEntityOfPage": { "@type": "WebPage", "@id": postUrl },
     "author": {
       "@type": "Person",
@@ -101,7 +102,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="relative aspect-video w-full overflow-hidden rounded-lg mb-10">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={post.coverImage}
+            src={cloudinaryUrl(post.coverImage, 1600)}
             alt={post.title}
             className="h-full w-full object-cover"
           />
